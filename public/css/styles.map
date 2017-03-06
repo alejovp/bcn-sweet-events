@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "../sass/styles.css",
+	"sources": [
+		"../sass/styles.sass"
+	],
+	"sourcesContent": [
+		"* {\n  border: 1px dashed red; }\n\nbody {\n  font-family: \"Helvetica Neue\",Helvetica,Arial,sans-serif;\n  font-size: 16px;\n  nav.navbar.navbar-default {\n    margin-bottom: 0; } }\n\nsection {\n  margin-top: 20px;\n  margin-bottom: 20px; }\n\nh2 {\n  text-align: center;\n  margin-bottom: 30px; }\n\n.menuOption {\n  height: 50px;\n  padding: 15px;\n  font-family: \"Helvetica Neue\",Helvetica,Arial,sans-serif;\n  font-size: 18px;\n  & a:hover {\n    text-decoration: none; } }\n\n.slideup, .slidedown {\n  max-height: 0;\n  overflow-y: hidden;\n  -webkit-transition: max-height 0.8s ease-in-out;\n  -moz-transition: max-height 0.8s ease-in-out;\n  -o-transition: max-height 0.8s ease-in-out;\n  transition: max-height 0.8s ease-in-out; }\n\n.slidedown {\n  max-height: 600px ; }\n"
+	],
+	"mappings": ";AAAA,AAAA,CAAC,CAAC;EACA,MAAM,EAAE,cAAe;CAAG;;;AAE5B,AAAA,IAAI,CAAC;EACH,WAAW,EAAE,2CAA4C;EACzD,SAAS,EAAE,IAAK;CAEQ;;;AAJ1B,AAGY,IAHR,CAGF,GAAG,AAAA,OAAO,AAAA,eAAe,CAAC;EACxB,aAAa,EAAE,CAAE;CAAG;;;AAExB,AAAA,OAAO,CAAC;EACN,UAAU,EAAE,IAAK;EACjB,aAAa,EAAE,IAAK;CAAG;;;AAEzB,AAAA,EAAE,CAAC;EACD,UAAU,EAAE,MAAO;EACnB,aAAa,EAAE,IAAK;CAAG;;;AAEzB,AAAA,WAAW,CAAC;EACV,MAAM,EAAE,IAAK;EACb,OAAO,EAAE,IAAK;EACd,WAAW,EAAE,2CAA4C;EACzD,SAAS,EAAE,IAAK;CAEa;;;AAN/B,AAKK,WALM,CAKP,CAAC,AAAA,MAAM,CAAC;EACR,eAAe,EAAE,IAAK;CAAG;;;AAE7B,AAAA,QAAQ,EAAE,AAAA,UAAU,CAAC;EACnB,UAAU,EAAE,CAAE;EACd,UAAU,EAAE,MAAO;EACnB,kBAAkB,EAAE,2BAA4B;EAChD,eAAe,EAAE,2BAA4B;EAC7C,aAAa,EAAE,2BAA4B;EAC3C,UAAU,EAAE,2BAA4B;CAAG;;;AAE7C,AAAA,UAAU,CAAC;EACT,UAAU,EAAE,KAAO;CAAG",
+	"names": []
+}
