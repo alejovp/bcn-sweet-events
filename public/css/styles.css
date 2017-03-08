@@ -214,4 +214,11 @@ footer a {
   }
 }
 
+@media (min-width: 769px) {
+  /* line 172, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/styles.sass */
+  .modal-dialog {
+    width: 650px;
+  }
+}
+
 /*# sourceMappingURL=../css/styles.map */
