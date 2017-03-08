@@ -1,0 +1,48 @@
+extends layout
+
+block main
+  .text-center
+    a(href='')
+      i.icon-facebook
+      |  
+      span
+        | Login with 
+        strong Facebook
+    a(href='')
+      i.icon-google-plus
+      |  
+      span
+        | Login with 
+        strong Google
+  section.container
+    .row
+    .col-sm-6
+      form(action='', method='POST', role='form')
+        legend LOGIN
+        .form-group
+          label(for='username') Username
+          |  
+          input#username.form-control(type='text', placeholder='username')
+        .form-group
+          label(for='password') Password
+          |  
+          input#password.form-control(type='password', placeholder='password')
+        |  
+        button.btn.btn-primary(type='submit') Submit
+    .col-sm-6
+      form(action='', method='POST', role='form')
+        legend REGISTER
+        .form-group
+          label(for='') Username
+          |  
+          input#username.form-control(type='text', placeholder='username')
+        .form-group
+          label(for='email') Password
+          |  
+          input#email.form-control(type='email', placeholder='email')
+        .form-group
+          label(for='password') Password
+          |  
+          input#password.form-control(type='password', placeholder='password')
+        |  
+        button.btn.btn-primary(type='submit') Submit

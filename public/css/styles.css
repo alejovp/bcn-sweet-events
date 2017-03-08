@@ -141,19 +141,18 @@ footer a {
 
 /* line 97, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/styles.sass */
 .intro {
-  background-image: url(../img/perfil2.jpg);
   background-size: cover;
   margin: 0;
   width: 100%;
   height: 500px;
 }
 
-/* line 103, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/styles.sass */
+/* line 102, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/styles.sass */
 .intro div {
   margin-top: 200px;
 }
 
-/* line 105, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/styles.sass */
+/* line 104, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/styles.sass */
 .intro div p {
   font-family: 'Marck Script', cursive;
   font-size: 30px;
@@ -163,37 +162,13 @@ footer a {
   color: white;
 }
 
-/* line 114, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/styles.sass */
+/* line 113, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/styles.sass */
 .hide {
   display: 'none';
 }
 
 /************** Products page **************************/
-/* line 127, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/styles.sass */
-.introCup {
-  background-image: url(../img/cupcakes2.jpg);
-  background-size: cover;
-  margin: 0;
-  width: 100%;
-  height: 500px;
-}
-
-/* line 133, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/styles.sass */
-.introCup div {
-  margin-top: 200px;
-}
-
-/* line 135, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/styles.sass */
-.introCup div p {
-  font-family: 'Marck Script', cursive;
-  font-size: 40px;
-  width: 70%;
-  margin: auto;
-  text-align: center;
-  color: white;
-}
-
-/* line 143, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/styles.sass */
+/* line 128, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/styles.sass */
 .row.item {
   margin-right: 15px;
   margin-left: 15px;
@@ -201,21 +176,21 @@ footer a {
 
 /************** Repsonsive elements *********************/
 @media (max-width: 575px) {
-  /* line 155, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/styles.sass */
+  /* line 140, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/styles.sass */
   .intro div p {
     font-size: 22px;
   }
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
-  /* line 163, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/styles.sass */
+  /* line 148, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/styles.sass */
   .intro div p {
     font-size: 26px;
   }
 }
 
 @media (min-width: 769px) {
-  /* line 172, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/styles.sass */
+  /* line 157, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/styles.sass */
   .modal-dialog {
     width: 650px;
   }

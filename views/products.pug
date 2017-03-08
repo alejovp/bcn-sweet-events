@@ -1,0 +1,78 @@
+extends layout
+
+block main
+  
+  section.container.articles
+    h3  Estos son nuestros Cupcakes
+    //- articles to create dinamicly
+    article
+      .cartCheck
+        p A&ntilde;adido al carrito!
+      .row.item
+        .col-xs-12.col-sm-4
+          img.img-responsive(src='/img/cup-nutella.jpg', alt='')
+        .col-xs-12.col-sm-6
+          div
+            h4 Nutella
+            p
+              | cresting areology Vulpecula tomboyishness biliprasin rectorate ascogonium withness seersucker cripply
+          div
+            h4 Ingredientes
+            ul
+              li Base vainilla
+              li Crema con Nutella
+              li Lluvia de Chocolate
+        .col-sm-2.pull-right
+          div
+            p Review counter area
+          |  
+          a.col-sm-12.btn.btn-default(href='') A&ntilde;adir al carrito
+          |  
+          a.col-sm-12.btn.btn-default(href='', data-toggle='modal', data-target='#login-overlay') Comprar
+  #login-overlay.modal.fade(tabindex='-1', role='dialog')
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close(type='button', data-dismiss='modal')
+            span(aria-hidden='true') &times;
+            span.sr-only Close
+          h4#myModalLabel.modal-title Compra directamente o registrate en BCN Sweet Events
+        .modal-body
+          .row
+            .col-sm-6
+              .well
+                form#loginForm(method='POST', action='/login/', novalidate='novalidate')
+                  .form-group
+                    label.control-label(for='name') Nombre
+                    |  
+                    input#name.form-control(type='text', name='name', value='', required='', placeholder='nombre')
+                    span.help-block
+                  .form-group
+                    label.control-label(for='email') Email
+                    |  
+                    input#email.form-control(type='email', name='email', value='', required='', placeholder='example@gmail.com')
+                    span.help-block
+                  |  
+                  button.btn.btn-success.btn-block(type='submit') Comprar
+            .col-sm-6
+              p.lead
+                | Unirte a nosotros no cuesta nada, es 
+                span.text-success Gratis!
+              ul.list-unstyled(style='line-height: 2')
+                li
+                  span.glyphicon.glyphicon-ok
+                  |  Ver todas tu compras
+                li
+                  span.glyphicon.glyphicon-ok
+                  |  Recompra r&aacute;pida
+                li
+                  span.glyphicon.glyphicon-ok
+                  |  Salvar tus productos favoritos
+                li
+                  span.glyphicon.glyphicon-ok
+                  |  Dejar opiniones
+                li
+                  a(href='/read-more/')
+                    u Read more
+              p
+                a.btn.btn-info.btn-block(href='/new-customer/') Registrarse!
