@@ -5,18 +5,20 @@
     <meta charset="UTF-8">
     <title>BCN Sweet Events</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Marck+Script" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <nav class="menuNav slideup">       
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Bcn Sweet Events</a>
+    <nav class="slideup" id="menuNav">       
+        <div class="navLinks">
+            <div class="logo">
+                <a href="#"><img src="img/logoBlack.png" alt=""></a>
             </div>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a class="menu" href="#">close</a></li>
+            <ul>
+                <li><a id="menu_1" class="menu" href="#">Menu</a></li>
             </ul>
+            <hr>
         </div>
         <div class="container text-center menuOption">
             <a href="#">Sweet Cupcakes</a>
@@ -41,22 +43,28 @@
         </div>
     </nav>
     <main>
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Bcn Sweet Events</a>
-                </div>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a class="menu" href="#">Menu</a></li>
-                </ul>
+        <nav class="navLinks">
+            <div class="logo">
+                <!-- <a href="#">Bcn Sweet Events</a> -->
+                <a href="#"><img src="img/logoNav.png" alt=""></a>
             </div>
-        <!-- /.container-fluid -->
+            <ul>
+                <li><a id="menu_2" class="menu" href="#">Menu</a></li>
+            </ul>
+            <hr>
         </nav>
+        <section class="intro">
+            <div>
+                <p>
+                    feverweed moonlike neuropterology glycogenesis lomentum skunkish dilutive Serdar trichorrhea dharana awash confessionalist lacepiece scobs venal
+                </p>
+            </div>
+        </section>
         <section class="container">
             <h2>
-                Sweet Cup Cakes
+                Sweet Cupcakes
             </h2>
-            <div class="col-sm-5">
+            <div class="secImg col-sm-5">
                 <img class="img-responsive" src="img/cupcakes.jpg" alt="">
             </div>
             <div class="col-sm-7">
@@ -74,9 +82,6 @@
             <h2>
                 Sweet Cakes
             </h2>
-            <div class="col-sm-5">
-                <img class="img-responsive" src="img/cake.jpg" alt="">
-            </div>
             <div class="col-sm-7">
                 <div>
                     <p>
@@ -84,8 +89,11 @@
                     </p>
                 </div>
                 <div>
-                    <a href="" class="btn btn-default pull-right">Learn More</a>
+                    <a href="" class="btn btn-default">Learn More</a>
                 </div>
+            </div>
+            <div class="secImg col-sm-5">
+                <img class="img-responsive" src="img/cake.jpg" alt="">
             </div>
         </section>
         <section class="container">
@@ -93,7 +101,7 @@
                 Sweet Party Tables
             </h2>
             <div class="col-sm-5">
-                <img class="img-responsive" src="img/cake.jpg" alt="">
+                <img class="secImg img-responsive" src="img/mesa-baby.jpg" alt="">
             </div>
             <div class="col-sm-7">
                 <div>
@@ -107,6 +115,12 @@
             </div>
         </section>
     </main>
+    <footer>
+        <ul class="list-inline">
+            <li><a href="">Instagram</a></li>
+            <li><a href="https://es-es.facebook.com/bcnsweetevents" target="_blank">Facebook</a></li>
+        </ul>
+    </footer>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
