@@ -61,38 +61,13 @@
             </div>
         </section>
         <section class="container adminContent" ng-controller="ProductCtrl">
-            <form class="col-sm-6" action="" method="POST" role="form">
-                <legend>Add Product</legend>
-                <div class="form-group">
-                    <label for="category">Category</label>
-                    <select class="selectpicker form-control" name="category" id="category">
-                        <option value="cupcake">Cupcake</option>
-                        <option value="cake">Cake</option>
-                        <option value="table">Party Table</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="">Title</label>
-                    <input type="text" class="form-control" id="" placeholder="Product Title" name="title">
-                </div>
-                <div class="form-group">
-                    <label for="description">Description</label>
-                    <textarea name="description" id="description" cols="30" rows="5" class="form-control"></textarea>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" value="">Option 1</label>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" value="">Option 2</label>
-                </div>
-                <div class="checkbox disabled">
-                    <label>
-                        <input type="checkbox" value="" disabled>Option 3</label>
-                </div>
-                <button type="" ng-click="addProduct($event)" class="btn btn-primary">Submit</button>
-            </form>
+            <ul>
+              <li>
+                <p>
+                  {{test}}
+                </p>
+              </li>
+            </ul>
         </section>
     </main>
     <footer>
@@ -106,6 +81,7 @@
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/adminApp.js"></script>
+    
 </body>
 
 </html>

@@ -2,18 +2,18 @@ extends layout
 
 block main
   
-  section.container.articles
+  section.articles
     h3  Estos son nuestros Cupcakes
     //- articles to create dinamicly
-    article
+    article.product
       .cartCheck
         p A&ntilde;adido al carrito!
       .row.item
-        .col-xs-12.col-sm-4
-          img.img-responsive(src='/img/cup-nutella.jpg', alt='')
-        .col-xs-12.col-sm-6
+        .col-xs-6.col-sm-3
+          img.img-responsive.itemImg(src='/img/cup-nutella.jpg', alt='')
+        .col-xs-12.col-sm-7
           div
-            h4 Nutella
+            h4.itemName Nutella
             p
               | cresting areology Vulpecula tomboyishness biliprasin rectorate ascogonium withness seersucker cripply
           div
@@ -22,13 +22,51 @@ block main
               li Base vainilla
               li Crema con Nutella
               li Lluvia de Chocolate
-        .col-sm-2.pull-right
-          div
-            p Review counter area
+        .col-xs-12.col-sm-2
+          .reviewArea
+            .reviewText
+              p Opiniones
+            .reviewCircle
+              div
+                p 20
+          a.col-sm-12.btn.btn-default(href='') Ver Opiniones
           |  
           a.col-sm-12.btn.btn-default(href='') A&ntilde;adir al carrito
           |  
           a.col-sm-12.btn.btn-default(href='', data-toggle='modal', data-target='#login-overlay') Comprar
+
+
+    article.product
+      .cartCheck
+        p A&ntilde;adido al carrito!
+      .row.item
+        .col-xs-6.col-sm-3
+          img.img-responsive.itemImg(src='/img/cup-nutella.jpg', alt='')
+        .col-xs-12.col-sm-7
+          div
+            h4.itemName Nutella
+            p
+              | cresting areology Vulpecula tomboyishness biliprasin rectorate ascogonium withness seersucker cripply
+          div
+            h4 Ingredientes
+            ul
+              li Base vainilla
+              li Crema con Nutella
+              li Lluvia de Chocolate
+        .col-xs-12.col-sm-2
+          .reviewArea
+            .reviewText
+              p Opiniones
+            .reviewCircle
+              div
+                p 20
+          a.col-sm-12.btn.btn-default(href='') Ver Opiniones
+          |  
+          a.col-sm-12.btn.btn-default(href='') A&ntilde;adir al carrito
+          |  
+          a.col-sm-12.btn.btn-default(href='', data-toggle='modal', data-target='#login-overlay') Comprar
+
+  //- modal order or logIn/register
   #login-overlay.modal.fade(tabindex='-1', role='dialog')
     .modal-dialog
       .modal-content
@@ -53,7 +91,7 @@ block main
                     input#email.form-control(type='email', name='email', value='', required='', placeholder='example@gmail.com')
                     span.help-block
                   |  
-                  button.btn.btn-success.btn-block(type='submit') Comprar
+                  button.btn.btn-success.btn-block(type='submit') Ordenar
             .col-sm-6
               p.lead
                 | Unirte a nosotros no cuesta nada, es 

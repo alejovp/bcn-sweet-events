@@ -1,5 +1,3 @@
-*
-  border: 1px dashed red;
 
 $project-grey: #BDBBBB;
 $project-pink: #F77EB5;
@@ -40,6 +38,12 @@ h3
   font-family: 'Lobster', cursive;
   font-size: 24px;
 
+a
+  text-decoration: none;
+
+button
+  outline: none;
+
 footer
   height: 200px;
   display: flex;
@@ -54,6 +58,7 @@ footer
 .navLinks
   width: 100%;
   background: transparent;
+  z-index: 1;
   .logo
     padding-left: 15px;
     padding-top: 15px;
@@ -66,10 +71,22 @@ footer
     float: right;
     margin: 0;
 
+.clMenu
+  width: 63px;
+  text-align: center;
+  padding-top: 6px;
+  span
+    transform: scale(1.3);
+    color: black;
+
 .menu
   color: white;
   font-family: 'Lobster', cursive;
   font-size: 24px;
+  background: transparent;
+  border: none;
+  &:hover
+    color: $project-grey;
 
 .menuOption
   height: auto;
@@ -94,24 +111,101 @@ footer
 .slidedown           
   max-height: 600px ;
 
+.cart
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+
+.glyphicon-shopping-cart
+  color: white;
+  transform: scale(1.2);
+
+.numberCircle
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+
+
 .intro
   background-size: cover;
   margin: 0;
   width: 100%;
   height: 500px;
+  position: relative;
   div
-    margin-top: 200px;
+    width: 100%;
+    position: absolute;
+    top: 200px;
     p
       font-family: 'Marck Script', cursive;
-      font-size: 30px;
-      width: 70%;
+      font-size: 30px;  
       margin: auto;
       text-align: center;
       color: white;
-      
+      width: 70%;
+
+.introNav
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+  text-align: center;
+
+.introBtns
+  padding: 10px;
+  margin: 15px;
+  border: 2px solid white;
+  border-radius: 5px;
+  color: white;
+  background: transparent;
+  font-size: 18px;
+  &:hover
+    text-decoration: none;
+    color: $project-grey;
+    border: 2px solid $project-grey;
+
+.introPar
+  margin-top: 80px;
+  margin-bottom: 50px;
+  font-family: 'Marck Script', cursive;
+  font-size: 24px;
 
 .hide
   display: 'none';
+
+.imgContainer
+  img
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    margin: auto;
+    padding: 10px;
+
+.sectionBtns
+    text-align: center;
+    height: 45px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    a
+      display: inline;
+      padding: 10px;
+      margin: 15px;
+      border: 2px solid black;
+      border-radius: 5px;
+      color: black;
+      background: transparent;
+      font-size: 18px;
+      &:hover
+        text-decoration: none;
+        color: $project-pink;
+        border: 2px solid $project-pink;
+
+
+
 
 /************** Products page **************************/
 
@@ -123,11 +217,84 @@ footer
 // .optionPink
 //   color: $project-pink;
 
-
-
 .row.item
   margin-right: 15px;
   margin-left: 15px;
+
+.articles
+  margin: 30px;
+
+.itemImg
+  padding: 10px;
+  border: 1px solid $project-grey;
+
+.itemName
+  font-family: 'Lobster', cursive;
+  font-size: 24px;
+
+.cartCheck
+  text-align: center;
+  margin: 0px 30px 0px 30px;
+  border: 1px solid green;
+  border-radius: 5px;
+  background-color: #BEFDBD;
+  p
+    margin: 0;
+    font-size: 16px;
+    color: green;
+
+.product
+  box-shadow: 10px 10px 5px #888888;
+  border: 1px solid $project-grey;
+  padding: 10px 0px 10px 0px;
+  margin-top: 20px;
+
+
+.reviewArea
+  border: 1px solid $project-grey;
+
+.reviewText
+  text-align: center;
+  margin-top: 10px;
+  p
+    margin-bottom: 0;
+
+.reviewCircle
+  padding: 10px;
+  div
+    width: 60px;
+    height: 60px;
+    background-color: $project-grey;
+    border-radius: 50%;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    font-size: 26px;
+    color: white;
+  p
+    margin: 0;
+
+
+/************** Admins page **************************/
+
+.introAdmin
+  margin: 0;
+  width: 100%;
+  height: 200px;
+  div
+    margin-top: 100px;
+    p
+      font-family: 'Marck Script', cursive;
+      font-size: 30px;
+      width: 70%;
+      margin: auto;
+      text-align: center;
+
+.adminColor
+  background-color: grey;
+
+.adminContent
+  background-color: grey;
 
 
 /************** Repsonsive elements *********************/
@@ -147,7 +314,7 @@ footer
     div
       p
         font-size: 26px;
-
+   
 // medium devices
 
 // @media (min-width: 576px) and (max-width: 768px)
@@ -156,3 +323,6 @@ footer
 @media (min-width: 769px)
   .modal-dialog
     width: 650px;
+  
+
+  

@@ -1,6 +1,7 @@
 doctype html
 html(lang='en')
   head
+    meta(name="viewport" content="width=device-width initial-scale=1")
     meta(charset='UTF-8')
     title BCN Sweet Events
     link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
@@ -13,8 +14,9 @@ html(lang='en')
           a(href='/')
             img(src='/img/logoBlack.png', alt='')
         ul
-          li
-            a.menu(href='#') Menu
+          li.clMenu
+            button.menu(href='#')
+              span(class="glyphicon glyphicon-remove-sign" aria-hidden="true")
         hr
       .container.text-center.menuOption
         a(href='/products/cupcakes') Sweet Cupcakes
@@ -35,13 +37,26 @@ html(lang='en')
         .logo
           a(href='/')
             img(src='/img/logoNav.png', alt='')
-        ul
+        ul(class="list-inline")
+          li(class="cart")
+            a(href='#')
+              span(class="glyphicon glyphicon-shopping-cart")
+              span(class="numberCircle") 0
           li
-            a.menu(href='#') Menu
+            button.menu(href='#') Menu
         hr
-      section.intro(style=`background-image:url(${urlImg})`)
+      section.row.intro(style=`background-image:url(${urlImg})`)
         div
-          p=section
+          p=paragraph
+        if (section == 'home')
+          p.introNav
+            a.btn.introBtns(href='#cupcakes') Cupcakes
+            a.btn.introBtns(href='#cakes') Cakes
+            a.btn.introBtns(href='#tables') Party Tables
+        if (section == 'cupcakes')
+          p.introNav
+            a.btn.introBtns(href='#cupcakes') Pedido Personalizado
+
       block main
     footer
       ul.list-inline

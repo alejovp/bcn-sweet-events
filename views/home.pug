@@ -1,33 +1,36 @@
 extends layout
 
 block main
+  .container.introPar
+    p Nos apasiona la elaboración de postres y aquí podrá encontrar una selección de nuestros mejores productos divididos en tres categorías: Cupcakes, Cakes y Mesas de fiesta. También puede contactar con nosotros para que elaboremos los productos a su gusto o según el tema de la fiesta que desee realizar.
+
   section.container
-    h2  Sweet Cupcakes
-    .secImg.col-sm-5
-      img.img-responsive(src='img/cupcakes.jpg', alt='')
+    h2(id="cupcakes")  Sweet Cupcakes
+    .row
+      .col-sm-5.imgContainer
+        img.img-responsive.secImg(src='img/cupcakes.jpg', alt='')
+      .col-sm-7
+        p
+          | cresting areology Vulpecula tomboyishness biliprasin rectorate ascogonium withness seersucker cripply grandiloquence sillabub rhizocorm liturgics unwatery transaquatic atramental unabiding sorrily hyperenthusiasm opisthogyrate unsuperscribed Bopyridae overfearful
+      .col-md-7.sectionBtns
+        a.btn(href='/products/cupcakes') Ir a Sweet Cupcakes
+  section.container
+    h2(id="cakes")  Sweet Cakes
+    .col-sm-5.imgContainer
+      img.img-responsive.secImg(src='img/cake.jpg', alt='')
     .col-sm-7
       div
         p
           | cresting areology Vulpecula tomboyishness biliprasin rectorate ascogonium withness seersucker cripply grandiloquence sillabub rhizocorm liturgics unwatery transaquatic atramental unabiding sorrily hyperenthusiasm opisthogyrate unsuperscribed Bopyridae overfearful
-      div
-        a.btn.btn-default.pull-right(href='/products/cupcakes') Learn More
+    .col-md-7.sectionBtns
+      a.btn(href='') Ir a Sweet Cakes
   section.container
-    h2  Sweet Cakes
+    h2(id="tables") Sweet Party Tables
+    .col-sm-5.imgContainer
+      img.img-responsive.secImg(src='img/mesa-baby.jpg', alt='')
     .col-sm-7
       div
         p
           | cresting areology Vulpecula tomboyishness biliprasin rectorate ascogonium withness seersucker cripply grandiloquence sillabub rhizocorm liturgics unwatery transaquatic atramental unabiding sorrily hyperenthusiasm opisthogyrate unsuperscribed Bopyridae overfearful
-      div
-        a.btn.btn-default(href='') Learn More
-    .secImg.col-sm-5
-      img.img-responsive(src='img/cake.jpg', alt='')
-  section.container
-    h2  Sweet Party Tables
-    .col-sm-5
-      img.secImg.img-responsive(src='img/mesa-baby.jpg', alt='')
-    .col-sm-7
-      div
-        p
-          | cresting areology Vulpecula tomboyishness biliprasin rectorate ascogonium withness seersucker cripply grandiloquence sillabub rhizocorm liturgics unwatery transaquatic atramental unabiding sorrily hyperenthusiasm opisthogyrate unsuperscribed Bopyridae overfearful
-      div
-        a.btn.btn-default.pull-right(href='') Learn More
+    .col-md-7.sectionBtns
+      a.btn(href='') Ir a Sweet Party Tables

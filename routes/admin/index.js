@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
-const renderAdmin = require('./handlers/renderAdmin.js')
+const addProduct = require('./handlers/addProduct.js')
 
-router.get('/cupcakes', renderAdmin)
+router.post('/', addProduct)
 
 module.exports = router
