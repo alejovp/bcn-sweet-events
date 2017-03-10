@@ -2,9 +2,15 @@
   "name": "bcn-sweet-events",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "6.9.1"
+  },
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon app"
+    "prestart": "npm install",
+    "dev": "nodemon app.js",
+    "postinstall": "./node_modules/bower/bin/bower install",
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
