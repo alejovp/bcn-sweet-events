@@ -5,9 +5,13 @@ const ProductSchema = new mongoose.Schema({
   category: String,
   title: String,
   description: String,
+  ingredients: Array,
+  packs: Array,
+  price: Number,
+  // photo: ???,
   createdAt: Number,
-  modifiedAt: Number,
-  user_id: String
+  product_id: String,
+  reviews: Array
 }, { collection })
 
 module.exports = mongoose.model('Product', ProductSchema)

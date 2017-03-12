@@ -1,9 +1,125 @@
 extends layout
 
 block main
-
-  section.articles
+  .container.cart
     h3  Este es tu carrito de la compra
-    //- articles to create dinamicly
-    article
-      .cartItem
+
+    .articles
+      
+      //- articles to create dinamicly
+      table.table.table-hover
+        thead
+          tr
+            th Product
+            th Quantity
+            th.text-center Price
+            th.text-center Total
+            th &nbsp;
+        tbody
+          tr
+            td.col-sm-8.col-md-6
+              .media
+                a.thumbnail.pull-left(href='#')
+                  img.media-object(src='http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png', style='width: 72px; height: 72px;')
+                .media-body
+                  h4.media-heading
+                    | Product name
+                  //- h5.media-heading
+                  //-   | by 
+                  //-   a(href='#') Brand name
+                  //- |  
+                  //- span Status:
+                  //- |  
+                  //- span.text-success
+                  //-   strong In Stock
+            td.col-sm-1.col-md-1(style='text-align: center')
+              input.form-control(type='number', value='3')
+            td.col-sm-1.col-md-1.text-center
+              strong $4.87
+            td.col-sm-1.col-md-1.text-center
+              strong $14.61
+            td.col-sm-1.col-md-1
+              button.btn.btn-danger(type='button')
+                span.glyphicon.glyphicon-remove
+                |  Remove
+          
+        tfoot
+          tr
+            td  &nbsp;
+            td  &nbsp;
+            td  &nbsp;
+            td
+              h5
+                | Subtotal
+                //- br
+                //- | Estimated shipping
+              h3 Total
+            td.text-right
+              h5
+                strong
+                  | $24.59
+                  //- br
+                  //- | $6.94
+              h3 $31.53
+          tr
+            td  &nbsp;
+            td  &nbsp;
+            td  &nbsp;
+            td
+              button.btn.btn-default(type='button')
+                span.glyphicon.glyphicon-shopping-cart
+                |  Continue Shopping
+            td
+              button.btn.btn-success(type='button', data-toggle='modal', data-target='#login-overlay')
+                | Checkout
+                span.glyphicon.glyphicon-play
+
+  
+  //- modal order or logIn/register
+  #login-overlay.modal.fade(tabindex='-1', role='dialog')
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close(type='button', data-dismiss='modal')
+            span(aria-hidden='true') &times;
+            span.sr-only Close
+          h4#myModalLabel.modal-title Compra directamente o registrate en BCN Sweet Events
+        .modal-body
+          .row
+            .col-sm-6
+              .well
+                form#loginForm(method='POST', action='/login/', novalidate='novalidate')
+                  .form-group
+                    label.control-label(for='name') Nombre
+                    |  
+                    input#name.form-control(type='text', name='name', value='', required='', placeholder='nombre')
+                    span.help-block
+                  .form-group
+                    label.control-label(for='email') Email
+                    |  
+                    input#email.form-control(type='email', name='email', value='', required='', placeholder='example@gmail.com')
+                    span.help-block
+                  |  
+                  button.btn.btn-success.btn-block(type='submit') Ordenar
+            .col-sm-6
+              p.lead
+                | Unirte a nosotros no cuesta nada, es 
+                span.text-success Gratis!
+              ul.list-unstyled(style='line-height: 2')
+                li
+                  span.glyphicon.glyphicon-ok
+                  |  Ver todas tu compras
+                li
+                  span.glyphicon.glyphicon-ok
+                  |  Recompra r&aacute;pida
+                li
+                  span.glyphicon.glyphicon-ok
+                  |  Salvar tus productos favoritos
+                li
+                  span.glyphicon.glyphicon-ok
+                  |  Dejar opiniones
+                li
+                  a(href='/read-more/')
+                    u Read more
+              p
+                a.btn.btn-info.btn-block(href='/new-customer/') Registrarse!

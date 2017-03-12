@@ -1,0 +1,49 @@
+extends layout
+
+block main
+  .container.proDetail
+    .row
+      .col-sm-4
+        img.img-responsive.itemImg(src='/img/cup-nutella.jpg', alt='')
+      .col-sm-5
+        div
+          h4.itemName= product.title
+          p= product.description
+            
+        div
+          h4 Ingredientes
+          ul
+            each ing in product.ingredients
+              li= ing
+        
+      .col-sm-3
+        
+        .input-group
+          span.input-group-btn
+            button.btn.btn-default.btn-number(type='button', min='0', step='1')
+              i.glyphicon.glyphicon-minus
+          |  
+          input.form-control.input-number(type='text', required='')
+          |  
+          span.input-group-btn
+            button.btn.btn-default.btn-number(type='button', min='0', step='1')
+              i.glyphicon.glyphicon-plus
+        a.col-sm-12.btn.btn-default(href='') A&ntilde;adir al carrito
+        a.col-sm-12.btn.btn-default(href=`/products/${product.category}`) Seguir comprando
+      .col-xs-12.text-center
+        h4 Opiniones de los usuarios
+      .col-sm-4.reviewTotal.pull-right
+        .reviewText
+          p 
+            span.badge 42
+            | Opiniones
+        .stars
+          span.fa.fa-star.checked
+          span.fa.fa-star.checked
+          span.fa.fa-star.checked
+          span.fa.fa-star
+          span.fa.fa-star
+      .col-xs-12
+        .reviewArea
+
+

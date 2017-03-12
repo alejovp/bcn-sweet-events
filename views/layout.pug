@@ -5,6 +5,7 @@ html(lang='en')
     meta(charset='UTF-8')
     title BCN Sweet Events
     link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/bower_components/components-font-awesome/css/font-awesome.min.css')
     link(href='https://fonts.googleapis.com/css?family=Lobster|Marck+Script', rel='stylesheet')
     link(rel='stylesheet', href='/css/styles.css')
   body
@@ -15,15 +16,15 @@ html(lang='en')
             img(src='/img/logoBlack.png', alt='')
         ul
           li.clMenu
-            button.menu(href='#')
+            button.menu
               span(class="glyphicon glyphicon-remove-sign" aria-hidden="true")
-        hr
+        //- hr
       .container.text-center.menuOption
         a(href='/products/cupcakes') Sweet Cupcakes
       .container.text-center.menuOption
-        a(href='#') Sweet Cakes
+        a(href='/products/cakes') Sweet Cakes
       .container.text-center.menuOption
-        a(href='#') Sweet Party Tables
+        a(href='/products/tables') Sweet Party Tables
       .container.text-center.menuOption
         a(href='/register') Register
       .container.text-center.menuOption
@@ -33,18 +34,28 @@ html(lang='en')
       .container.text-center.menuOption
         a(href='#') Contact
     main
-      nav.navLinks
+      nav.navLinks   
         .logo
           a(href='/')
             img(src='/img/logoNav.png', alt='')
-        ul(class="list-inline")
-          li(class="cart")
-            a(href='#')
+
+        ul.list-inline.deskNav
+          li
+            a.btn(href='/products/cupcakes') Cupcakes
+          li
+            a.btn(href='/products/cakes') Cakes
+          li
+            a.btn(href='/products/tables') Party Tables
+
+        ul.list-inline.movNav
+          li(class="cartIcon")
+            a(href='/products/cart')
               span(class="glyphicon glyphicon-shopping-cart")
               span(class="numberCircle") 0
           li
-            button.menu(href='#') Menu
-        hr
+            button.menu Menu
+          
+        //- hr
       section.row.intro(style=`background-image:url(${urlImg})`)
         div
           p=paragraph
@@ -59,11 +70,21 @@ html(lang='en')
 
       block main
     footer
-      ul.list-inline
-        li
-          a(href='') Instagram
-        li
-          a(href='https://es-es.facebook.com/bcnsweetevents', target='_blank') Facebook
+      div
+        ul
+          li
+            a(href='/')
+              img(src='/img/logoBlack.png', alt='')
+          li BCN Sweet Events © 2017. All rights reserved.
+      .social
+        ul.list-inline
+          li
+            a(href='https://es-es.facebook.com/bcnsweetevents', target='_blank')
+              i.fa.fa-facebook-square(aria-hidden='true')
+          li
+            a(href='')
+              i.fa.fa-instagram(aria-hidden='true')
+
     script(src='/bower_components/jquery/dist/jquery.min.js')
     script(src='/bower_components/bootstrap/dist/js/bootstrap.min.js')
     script(src='/js/main.js')

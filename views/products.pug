@@ -5,112 +5,37 @@ block main
   section.articles
     h3  Estos son nuestros Cupcakes
     //- articles to create dinamicly
-    article.product
-      .cartCheck
-        p A&ntilde;adido al carrito!
-      .row.item
-        .col-xs-6.col-sm-3
-          img.img-responsive.itemImg(src='/img/cup-nutella.jpg', alt='')
-        .col-xs-12.col-sm-7
-          div
-            h4.itemName Nutella
-            p
-              | cresting areology Vulpecula tomboyishness biliprasin rectorate ascogonium withness seersucker cripply
-          div
-            h4 Ingredientes
-            ul
-              li Base vainilla
-              li Crema con Nutella
-              li Lluvia de Chocolate
-        .col-xs-12.col-sm-2
-          .reviewArea
-            .reviewText
-              p Opiniones
-            .reviewCircle
-              div
-                p 20
-          a.col-sm-12.btn.btn-default(href='') Ver Opiniones
-          |  
-          a.col-sm-12.btn.btn-default(href='') A&ntilde;adir al carrito
-          |  
-          a.col-sm-12.btn.btn-default(href='', data-toggle='modal', data-target='#login-overlay') Comprar
+    .row
+      each product in products
+        if (product.category === section)
+          .col-sm-6.col-md-4
+            .thumbnail
+              a(href=`/products/details/${product.id}`)
+               img(src='/img/cup-nutella.jpg', alt='...')
 
-
-    article.product
-      .cartCheck.hide
-        p A&ntilde;adido al carrito!
-      .row.item
-        .col-xs-6.col-sm-3
-          img.img-responsive.itemImg(src='/img/cup-nutella.jpg', alt='')
-        .col-xs-12.col-sm-7
-          div
-            h4.itemName Nutella
-            p
-              | cresting areology Vulpecula tomboyishness biliprasin rectorate ascogonium withness seersucker cripply
-          div
-            h4 Ingredientes
-            ul
-              li Base vainilla
-              li Crema con Nutella
-              li Lluvia de Chocolate
-        .col-xs-12.col-sm-2
-          .reviewArea
-            .reviewText
-              p Opiniones
-            .reviewCircle
-              div
-                p 20
-          a.col-sm-12.btn.btn-default(href='') Ver Opiniones
-          |  
-          a.col-sm-12.btn.btn-default(href='') A&ntilde;adir al carrito
-          |  
-          a.col-sm-12.btn.btn-default(href='', data-toggle='modal', data-target='#login-overlay') Comprar
-
-  //- modal order or logIn/register
-  #login-overlay.modal.fade(tabindex='-1', role='dialog')
-    .modal-dialog
-      .modal-content
-        .modal-header
-          button.close(type='button', data-dismiss='modal')
-            span(aria-hidden='true') &times;
-            span.sr-only Close
-          h4#myModalLabel.modal-title Compra directamente o registrate en BCN Sweet Events
-        .modal-body
-          .row
-            .col-sm-6
-              .well
-                form#loginForm(method='POST', action='/login/', novalidate='novalidate')
-                  .form-group
-                    label.control-label(for='name') Nombre
-                    |  
-                    input#name.form-control(type='text', name='name', value='', required='', placeholder='nombre')
-                    span.help-block
-                  .form-group
-                    label.control-label(for='email') Email
-                    |  
-                    input#email.form-control(type='email', name='email', value='', required='', placeholder='example@gmail.com')
-                    span.help-block
-                  |  
-                  button.btn.btn-success.btn-block(type='submit') Ordenar
-            .col-sm-6
-              p.lead
-                | Unirte a nosotros no cuesta nada, es 
-                span.text-success Gratis!
-              ul.list-unstyled(style='line-height: 2')
-                li
-                  span.glyphicon.glyphicon-ok
-                  |  Ver todas tu compras
-                li
-                  span.glyphicon.glyphicon-ok
-                  |  Recompra r&aacute;pida
-                li
-                  span.glyphicon.glyphicon-ok
-                  |  Salvar tus productos favoritos
-                li
-                  span.glyphicon.glyphicon-ok
-                  |  Dejar opiniones
-                li
-                  a(href='/read-more/')
-                    u Read more
-              p
-                a.btn.btn-info.btn-block(href='/new-customer/') Registrarse!
+              .caption
+                h3=product.title
+                  
+                p.itemReviews
+                  span.badge
+                    | 42 
+                  | Opiniones  
+                  span.fa.fa-star.checked
+                  span.fa.fa-star.checked
+                  span.fa.fa-star.checked
+                  span.fa.fa-star
+                  span.fa.fa-star
+                a.btn.btn-default.col-xs-12(href=`/products/details/${product.id}`, role='button') Ver detalles
+                .col-xs-9.selector
+                  p Selecciona un pack
+                  p
+                    select.selectpicker
+                      option 6 cupcakes
+                      option 12 cupcakes
+                      option 18 cupcakes
+                .col-xs-3.price
+                  p Total
+                  p
+                    span €3.00
+                a.btn.btn-primary.col-xs-12(href='#', role='button') Añadir al carrito
+                hr

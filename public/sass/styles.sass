@@ -1,3 +1,6 @@
+@import 'partials/detail'
+@import 'partials/product'
+@import 'partials/cart'
 
 $project-grey: #BDBBBB;
 $project-pink: #F77EB5;
@@ -45,17 +48,29 @@ button
   outline: none;
 
 footer
+  position: relative;
   height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: $project-grey;
+  img
+    transform: scale(0.5)
   li
     height: auto;
+    list-style: none;
+    text-align: center;
+    font-size: 14px;
   a
     padding: 15px;
+    color: black;
+    &:hover
+      text-decoration: none;
+      color: black;
 
 .navLinks
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   background: transparent;
   z-index: 1;
@@ -63,13 +78,27 @@ footer
     padding-left: 15px;
     padding-top: 15px;
     display: inline-block;
-    float: left;
-  & > ul
+    // float: left;
+  ul
     padding: 15px;
     list-style: none;
     display: inline-block;
-    float: right;
+    // float: right;
     margin: 0;
+
+
+.deskNav
+  a
+    color: white;
+    font-family: 'Lobster', cursive;
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    &:hover
+      color: $project-grey;
+
+.list-inline.movNav
+  padding-top: 24px;
 
 .clMenu
   width: 63px;
@@ -117,7 +146,7 @@ footer
 .slidedown           
   max-height: 600px ;
 
-.cart
+.cartIcon
   display: flex;
   align-items: center;
   margin-right: 20px;
@@ -210,75 +239,15 @@ footer
         color: $project-pink;
         border: 2px solid $project-pink;
 
+.social
+  position: absolute;
+  top: 15px;
+  right: 5%;
 
-
-
-/************** Products page **************************/
-
-// .menuWhite
-//   background: white; 
-//   padding-right: 10px;
-//   padding-bottom: 10px;
-
-// .optionPink
-//   color: $project-pink;
-
-.row.item
-  margin-right: 15px;
-  margin-left: 15px;
-
-.articles
-  margin: 30px;
-
-.itemImg
-  padding: 10px;
-  border: 1px solid $project-grey;
-
-.itemName
-  font-family: 'Lobster', cursive;
-  font-size: 24px;
-
-.cartCheck
-  text-align: center;
-  margin: 0px 30px 0px 30px;
-  border: 1px solid green;
-  border-radius: 5px;
-  background-color: #BEFDBD;
-  p
-    margin: 0;
-    font-size: 16px;
-    color: green;
-
-.product
-  box-shadow: 10px 10px 5px #888888;
-  border: 1px solid $project-grey;
-  padding: 10px 0px 10px 0px;
-  margin-top: 20px;
-
-
-.reviewArea
-  border: 1px solid $project-grey;
-
-.reviewText
-  text-align: center;
-  margin-top: 10px;
-  p
-    margin-bottom: 0;
-
-.reviewCircle
-  padding: 10px;
-  div
-    width: 60px;
-    height: 60px;
-    background-color: $project-grey;
-    border-radius: 50%;
-    margin: auto;
-    text-align: center;
-    padding: 10px;
-    font-size: 26px;
-    color: white;
-  p
-    margin: 0;
+  li
+    font-size: 33px;
+  i
+    color: black;
 
 
 /************** Admins page **************************/
@@ -313,6 +282,9 @@ footer
       p
         font-size: 22px;
 
+  ul.list-inline.deskNav
+    display: none;
+
 // small devices
 
 @media (min-width: 576px) and (max-width: 768px)
@@ -320,15 +292,17 @@ footer
     div
       p
         font-size: 26px;
+  ul.list-inline.deskNav
+    display: none;
    
-// medium devices
+// medium and large devices
 
-// @media (min-width: 576px) and (max-width: 768px)
-
-// large devices
 @media (min-width: 769px)
   .modal-dialog
     width: 650px;
+
+  .menu
+    display: none;
   
 
   

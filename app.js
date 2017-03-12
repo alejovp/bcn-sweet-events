@@ -1,16 +1,16 @@
 const express = require('express')
 // const bodyParser = require('body-parser')
-// const mongoose = require('mongoose')
+const mongoose = require('mongoose')
 
 const app = express()
 const PORT = process.env.PORT || 3000
-// const urlDB = process.env.DB_URI || 'mongodb://localhost:27017/b_s_e'
+const urlDB = process.env.DB_URI || 'mongodb://localhost:27017/b_s_e'
 
 const routerProducts = require('./routes/products')
 // const routerAdmin = require('./routes/admin')
 
-// mongoose.connect(urlDB)
-// mongoose.Promise = global.Promise
+mongoose.connect(urlDB)
+mongoose.Promise = global.Promise
 
 app.use(express.static('public'))
 // app.use(bodyParser.urlencoded({ extended: false }))
