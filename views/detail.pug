@@ -5,7 +5,7 @@ block main
     .row
       .col-sm-4
         img.img-responsive.itemImg(src='/img/cup-nutella.jpg', alt='')
-      .col-sm-5
+      .col-sm-5.proData
         div
           h4.itemName= product.title
           p= product.description
@@ -28,7 +28,7 @@ block main
           span.input-group-btn
             button.btn.btn-default.btn-number(type='button', min='0', step='1')
               i.glyphicon.glyphicon-plus
-        a.col-sm-12.btn.btn-default(href='') A&ntilde;adir al carrito
+        a.col-sm-12.btn.btn-default.addProduct(href='') A&ntilde;adir al carrito
         a.col-sm-12.btn.btn-default(href=`/products/${product.category}`) Seguir comprando
       .col-xs-12.text-center
         h4 Opiniones de los usuarios

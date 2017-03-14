@@ -37,3 +37,18 @@ for (let i = 0; i < menu.length; i++) {
   })
 }
 
+/** ************************ Add Cart ajax *****************************/
+
+$('.addProduct').click(function (e) {
+  e.preventDefault()
+  const url = this.href
+  let cartCount = $('.numberCircle').text()
+  // let title = this.siblings('h3').text()
+  // console.log(title)
+  console.log(cartCount)
+  $.ajax({ url })
+    .done(function () {
+      $('.numberCircle').text(Number(cartCount) + 1)
+      console.log('added to the cart')
+    })
+})

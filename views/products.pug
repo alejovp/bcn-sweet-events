@@ -9,12 +9,12 @@ block main
       each product in products
         if (product.category === section)
           .col-sm-6.col-md-4
-            .thumbnail
+            .thumbnail.proData
               a(href=`/products/details/${product.id}`)
                img(src='/img/cup-nutella.jpg', alt='...')
 
               .caption
-                h3=product.title
+                h3.itemName=product.title
                   
                 p.itemReviews
                   span.badge
@@ -37,5 +37,6 @@ block main
                   p Total
                   p
                     span €3.00
-                a.btn.btn-primary.col-xs-12(href='#', role='button') Añadir al carrito
+
+                a.btn.btn-primary.col-xs-12.addProduct(href=`/products/cart/${product.id}`, role='button') Añadir al carrito
                 hr

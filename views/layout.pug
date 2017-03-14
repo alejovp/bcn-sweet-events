@@ -51,7 +51,7 @@ html(lang='en')
           li(class="cartIcon")
             a(href='/products/cart')
               span(class="glyphicon glyphicon-shopping-cart")
-              span(class="numberCircle") 0
+              span(class="numberCircle")= cartNumber || 0
           li
             button.menu Menu
           
@@ -73,7 +73,7 @@ html(lang='en')
       div
         ul
           li
-            a(href='/')
+            a(href='#')
               img(src='/img/logoBlack.png', alt='')
           li BCN Sweet Events © 2017. All rights reserved.
       .social

@@ -16,32 +16,32 @@ block main
             th.text-center Total
             th &nbsp;
         tbody
-          tr
-            td.col-sm-8.col-md-6
-              .media
-                a.thumbnail.pull-left(href='#')
-                  img.media-object(src='http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png', style='width: 72px; height: 72px;')
-                .media-body
-                  h4.media-heading
-                    | Product name
-                  //- h5.media-heading
-                  //-   | by 
-                  //-   a(href='#') Brand name
-                  //- |  
-                  //- span Status:
-                  //- |  
-                  //- span.text-success
-                  //-   strong In Stock
-            td.col-sm-1.col-md-1(style='text-align: center')
-              input.form-control(type='number', value='3')
-            td.col-sm-1.col-md-1.text-center
-              strong $4.87
-            td.col-sm-1.col-md-1.text-center
-              strong $14.61
-            td.col-sm-1.col-md-1
-              button.btn.btn-danger(type='button')
-                span.glyphicon.glyphicon-remove
-                |  Remove
+          each product in cartProducts
+            tr
+              td.col-sm-8.col-md-6
+                .media
+                  a.thumbnail.pull-left(href='#')
+                    img.media-object(src='http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png', style='width: 72px; height: 72px;')
+                  .media-body
+                    h4.media-heading= product.title
+                    //- h5.media-heading
+                    //-   | by 
+                    //-   a(href='#') Brand name
+                    //- |  
+                    //- span Status:
+                    //- |  
+                    //- span.text-success
+                    //-   strong In Stock
+              td.col-sm-1.col-md-1(style='text-align: center')
+                input.form-control(type='number', value='3')
+              td.col-sm-1.col-md-1.text-center
+                strong $4.87
+              td.col-sm-1.col-md-1.text-center
+                strong $14.61
+              td.col-sm-1.col-md-1
+                button.btn.btn-danger(type='button')
+                  span.glyphicon.glyphicon-remove
+                  |  Remove
           
         tfoot
           tr
@@ -100,7 +100,7 @@ block main
                     input#email.form-control(type='email', name='email', value='', required='', placeholder='example@gmail.com')
                     span.help-block
                   |  
-                  button.btn.btn-success.btn-block(type='submit') Ordenar
+                  button.btn.btn-success.btn-block(type='submit') Realizar Pedido
             .col-sm-6
               p.lead
                 | Unirte a nosotros no cuesta nada, es 
