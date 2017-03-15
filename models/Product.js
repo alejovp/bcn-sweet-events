@@ -8,7 +8,7 @@ const ProductSchema = new mongoose.Schema({
   ingredients: Array,
   packs: Array,
   price: Number,
-  // photo: ???,
+  imgURL: String,
   createdAt: Number,
   product_id: String,
   reviews: Array

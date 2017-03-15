@@ -4,76 +4,67 @@ block main
   .container.cart
     h3  Este es tu carrito de la compra
 
-    .articles
-      
+    .cartArticles
       //- articles to create dinamicly
-      table.table.table-hover
-        thead
-          tr
-            th Product
-            th Quantity
-            th.text-center Price
-            th.text-center Total
-            th &nbsp;
-        tbody
-          each product in cartProducts
-            tr
-              td.col-sm-8.col-md-6
-                .media
-                  a.thumbnail.pull-left(href='#')
-                    img.media-object(src='http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png', style='width: 72px; height: 72px;')
-                  .media-body
-                    h4.media-heading= product.title
-                    //- h5.media-heading
-                    //-   | by 
-                    //-   a(href='#') Brand name
-                    //- |  
-                    //- span Status:
-                    //- |  
-                    //- span.text-success
-                    //-   strong In Stock
-              td.col-sm-1.col-md-1(style='text-align: center')
-                input.form-control(type='number', value='3')
-              td.col-sm-1.col-md-1.text-center
-                strong $4.87
-              td.col-sm-1.col-md-1.text-center
-                strong $14.61
-              td.col-sm-1.col-md-1
-                button.btn.btn-danger(type='button')
-                  span.glyphicon.glyphicon-remove
-                  |  Remove
-          
-        tfoot
-          tr
-            td  &nbsp;
-            td  &nbsp;
-            td  &nbsp;
-            td
-              h5
-                | Subtotal
-                //- br
-                //- | Estimated shipping
-              h3 Total
-            td.text-right
-              h5
-                strong
-                  | $24.59
-                  //- br
-                  //- | $6.94
-              h3 $31.53
-          tr
-            td  &nbsp;
-            td  &nbsp;
-            td  &nbsp;
-            td
-              button.btn.btn-default(type='button')
-                span.glyphicon.glyphicon-shopping-cart
-                |  Continue Shopping
-            td
-              button.btn.btn-success(type='button', data-toggle='modal', data-target='#login-overlay')
-                | Checkout
-                span.glyphicon.glyphicon-play
+      each item in cartProducts
+        article.row
+          .col-sm-5
+            table
+              thead
+                tr
+                  th
+                  th Product
+              tbody
+                tr
+                  td
+                    a(href='')
+                      img(src='http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png', style='width: 72px; height: 72px', alt='')
+                  td
+                    h4= item.product.title
+          .col-sm-7
+            table
+              thead
+                tr
+                  th.col-sm-4 Quantity
+                  th.col-sm-4 Price
+                  th.col-sm-4
+              tbody.proData
+                tr
+                  td.col-sm-4
+                    p
+                      select.selectpicker
+                        option(value="6" selected=(item.qtty === '6')) 6 cupcakes
+                        option(value="12" selected=(item.qtty === '12')) 12 cupcakes
+                        option(value="18" selected=(item.qtty === '18')) 18 cupcakes
+                  - var price = item.qtty * 3
+                    td.col-sm-4.price(data-price="3") €
+                      span.itemPrice #{price}
 
+                  td.col-sm-4
+                    button.btn.btn-danger.remove(type='button' data-id=`${item.product._id}`)
+                      span.glyphicon.glyphicon-remove
+                      |  Remove
+    .col-sm-4.row.infoCart.pull-right
+      .col-xs-12.totals
+        .col-xs-5
+          p Subtotal:
+          p Envío:
+          p.totalDesc Total:
+        .col-xs-7
+          p €
+            span.totalNumbers 0.00
+          p €
+            span.totalNumbers 0.00
+          p €
+            span.result 0.00
+      a.btn.btn-default.col-xs-12.continue(role='button' href=(cartProducts.length !== 0 ? '/products/' + cartProducts[0].product.category : '/products/cupcakes'))
+        |  Seguir Comprando 
+        span.glyphicon.glyphicon-shopping-cart
+
+      a.btn.btn-success.col-xs-12.checkout(role='button', data-toggle='modal', data-target='#login-overlay')
+        | Realizar Pedido 
+        span.glyphicon.glyphicon-play
+  hr
   
   //- modal order or logIn/register
   #login-overlay.modal.fade(tabindex='-1', role='dialog')
@@ -88,16 +79,21 @@ block main
           .row
             .col-sm-6
               .well
-                form#loginForm(method='POST', action='/login/', novalidate='novalidate')
+                form#orderForm(method='POST', action='/cart/orders', novalidate='novalidate')
                   .form-group
                     label.control-label(for='name') Nombre
                     |  
-                    input#name.form-control(type='text', name='name', value='', required='', placeholder='nombre')
+                    input#name.form-control(type='text', name='name', value='', required, placeholder='nombre')
                     span.help-block
                   .form-group
                     label.control-label(for='email') Email
                     |  
-                    input#email.form-control(type='email', name='email', value='', required='', placeholder='example@gmail.com')
+                    input#email.form-control(type='email', name='email', value='', required, placeholder='example@gmail.com')
+                    span.help-block
+                  .form-group
+                    label.control-label Teléfono
+                    |  
+                    input#email.form-control(type='tel', name='phone', value='', required, placeholder='689 548 785')
                     span.help-block
                   |  
                   button.btn.btn-success.btn-block(type='submit') Realizar Pedido

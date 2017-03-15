@@ -1,5 +1,5 @@
 const express = require('express')
-// const bodyParser = require('body-parser')
+const path = require('path')
 const mongoose = require('mongoose')
 const session = require('express-session')
 
@@ -9,20 +9,19 @@ const urlDB = process.env.DB_URI || 'mongodb://localhost:27017/b_s_e'
 
 const routerProducts = require('./routes/products')
 // const routerAdmin = require('./routes/admin')
+const routerCart = require('./routes/cart')
 
 mongoose.connect(urlDB)
 mongoose.Promise = global.Promise
 
 app.set('view engine', 'pug')
 
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')))
 app.use(session({
   secret: 'this is a secret',
   resave: false,
   saveUninitialized: true
 }))
-// app.use(bodyParser.urlencoded({ extended: false }))
-// app.use(bodyParser.json())
 
 app.use((req, res, next) => {
   let cartProducts = req.session.cartProducts
@@ -47,6 +46,7 @@ app.get('/', (req, res) => {
 
 app.use('/products', routerProducts)
 // app.use('/admin', routerAdmin)
+app.use('/cart', routerCart)
 
 app.get('/register', (req, res) => {
   const section = 'Register Section'

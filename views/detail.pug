@@ -1,11 +1,11 @@
 extends layout
 
 block main
-  .container.proDetail
+  .container.proDetail.proData
     .row
       .col-sm-4
         img.img-responsive.itemImg(src='/img/cup-nutella.jpg', alt='')
-      .col-sm-5.proData
+      .col-sm-4
         div
           h4.itemName= product.title
           p= product.description
@@ -16,19 +16,21 @@ block main
             each ing in product.ingredients
               li= ing
         
-      .col-sm-3
+      .col-sm-4
         
-        .input-group
-          span.input-group-btn
-            button.btn.btn-default.btn-number(type='button', min='0', step='1')
-              i.glyphicon.glyphicon-minus
-          |  
-          input.form-control.input-number(type='text', required='')
-          |  
-          span.input-group-btn
-            button.btn.btn-default.btn-number(type='button', min='0', step='1')
-              i.glyphicon.glyphicon-plus
-        a.col-sm-12.btn.btn-default.addProduct(href='') A&ntilde;adir al carrito
+        .col-xs-9.selector
+          p Selecciona un pack
+          p
+            select.selectpicker
+              option(value="6") 6 cupcakes
+              option(value="12") 12 cupcakes
+              option(value="18") 18 cupcakes
+        .col-xs-3.price(data-price="3")
+          p Total
+          p €
+            span 18.00
+
+        a.btn.btn-primary.col-xs-12.addProduct(href="", data-id=`${product.id}`, role='button') Añadir al carrito
         a.col-sm-12.btn.btn-default(href=`/products/${product.category}`) Seguir comprando
       .col-xs-12.text-center
         h4 Opiniones de los usuarios

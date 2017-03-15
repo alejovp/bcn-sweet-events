@@ -1,13 +1,66 @@
 $project-grey: #BDBBBB;
 $project-pink: #F77EB5;
 
+table
+  text-align: center;
+  width: 100%;
+
+thead
+  border-bottom: 1px solid $project-grey;
+
+th, td
+  text-align: center;
+  vertical-align: center;
+
+td 
+  height: 100px; 
+
+td.price
+    border: none; 
+
 .cart
-  height: 600px;
+  height: 800px;
   padding-top: 30px;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   margin-top: -250px;
   margin-bottom: 50px;
   z-index: 1;
   position: relative;
   background-color: white;
   border: 1px solid $project-pink;
+
+.cartArticles
+  margin: 30px;
+  height: 350px;
+  overflow: scroll;
+  article div  
+    padding: 0;
+    border-bottom: 1px solid $project-grey;
+
+.infoCart
+  margin-top: 30px;
+
+.continue
+  span
+    color: black;
+
+.checkout
+  width: 100%;
+
+.totals
+  background-color: $project-grey;
+  border-radius: 4px;
+  padding-left: 0;
+  .col-xs-7
+    p
+      text-align: right
+
+
+
+
+
+
+
+
+
+

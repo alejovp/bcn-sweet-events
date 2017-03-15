@@ -46,7 +46,7 @@
 }
 
 /* line 4, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_product.sass */
-.articles {
+.proArticles {
   margin: 30px;
 }
 
@@ -90,16 +90,83 @@
 }
 
 /* line 4, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_cart.sass */
+table {
+  text-align: center;
+  width: 100%;
+}
+
+/* line 8, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_cart.sass */
+thead {
+  border-bottom: 1px solid #BDBBBB;
+}
+
+/* line 11, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_cart.sass */
+th, td {
+  text-align: center;
+  vertical-align: center;
+}
+
+/* line 15, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_cart.sass */
+td {
+  height: 100px;
+}
+
+/* line 18, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_cart.sass */
+td.price {
+  border: none;
+}
+
+/* line 21, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_cart.sass */
 .cart {
-  height: 600px;
+  height: 800px;
   padding-top: 30px;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   margin-top: -250px;
   margin-bottom: 50px;
   z-index: 1;
   position: relative;
   background-color: white;
   border: 1px solid #F77EB5;
+}
+
+/* line 32, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_cart.sass */
+.cartArticles {
+  margin: 30px;
+  height: 350px;
+  overflow: scroll;
+}
+
+/* line 36, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_cart.sass */
+.cartArticles article div {
+  padding: 0;
+  border-bottom: 1px solid #BDBBBB;
+}
+
+/* line 40, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_cart.sass */
+.infoCart {
+  margin-top: 30px;
+}
+
+/* line 44, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_cart.sass */
+.continue span {
+  color: black;
+}
+
+/* line 47, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_cart.sass */
+.checkout {
+  width: 100%;
+}
+
+/* line 50, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_cart.sass */
+.totals {
+  background-color: #BDBBBB;
+  border-radius: 4px;
+  padding-left: 0;
+}
+
+/* line 55, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_cart.sass */
+.totals .col-xs-7 p {
+  text-align: right;
 }
 
 /* line 8, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/styles.sass */

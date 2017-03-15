@@ -2,7 +2,7 @@ extends layout
 
 block main
   
-  section.articles
+  section.proArticles
     h3  Estos son nuestros Cupcakes
     //- articles to create dinamicly
     .row
@@ -30,13 +30,13 @@ block main
                   p Selecciona un pack
                   p
                     select.selectpicker
-                      option 6 cupcakes
-                      option 12 cupcakes
-                      option 18 cupcakes
-                .col-xs-3.price
+                      option(value="6") 6 cupcakes
+                      option(value="12") 12 cupcakes
+                      option(value="18") 18 cupcakes
+                .col-xs-3.price(data-price="3")
                   p Total
-                  p
-                    span €3.00
+                  p €
+                    span 18.00
 
-                a.btn.btn-primary.col-xs-12.addProduct(href=`/products/cart/${product.id}`, role='button') Añadir al carrito
+                a.btn.btn-primary.col-xs-12.addProduct(href="", data-id=`${product.id}`, role='button') Añadir al carrito
                 hr
