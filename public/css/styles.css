@@ -597,6 +597,10 @@ footer a:hover {
 
 @media (min-width: 993px) {
   /* line 317, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/styles.sass */
+  .menu {
+    display: none;
+  }
+  /* line 320, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/styles.sass */
   .introNav {
     bottom: 40px;
   }
