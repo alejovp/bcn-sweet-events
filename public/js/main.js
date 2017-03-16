@@ -61,10 +61,11 @@ $('.proData').on('click', '.addProduct', function (e) {
   const data = { id, qtty }
 
   $.ajax({ url, method, data })
-    .done(function () {
+    .then(() => {
       $('.numberCircle').text(Number(cartCount) + 1)
       console.log('added to the cart')
     })
+    .catch(() => alert('There was an error while adding your product to cart, please try again!'))
 })
 
 // Add Product to cart with a get ajax request
@@ -105,22 +106,35 @@ $('.remove').click(function (e) {
   const method = 'DELETE'
   const id = $(this).attr('data-id')
   const data = { id }
-  // Remove article from the DOM cart
-  $(this).closest('article').remove()
 
   // Remove article from the session cart
   $.ajax({ url, method, data })
-    .done(function () {
+    .then(() => {
+      // Remove article from the DOM cart
+      $(this).closest('article').remove()
       $('.numberCircle').text(Number(cartCount) - 1)
       console.log('removed from cart')
     })
+    .catch(() => alert('There was an error while deleting your order, please try again!'))
 })
 
-// Place an order (adding some data to submit event)
-$('#orderForm').submit(function (e) {
-  e.preventDefault()
-  console.log(this)
-})
+// Place an order
+// $('#orderForm').submit((e) => {
+//   e.preventDefault()
+//   const name = $(this).find('#name').val()
+//   const email = $(this).find('#email').val()
+//   const phone = $(this).find('#phone').val()
+//   const data = { name, email, phone }
+//   const method = 'POST'
+//   const url = '/cart/orders'
+
+//   $.ajax({ url, method, data })
+//     .then(() => {
+//       $('.numberCircle').text('0')
+//       console.log('removed from cart')
+//     })
+//     .catch(() => alert('There was an error taking your order!'))
+// })
 
 // Helper functions
 function cartSum (itemPrices) {

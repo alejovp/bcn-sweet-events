@@ -1,14 +1,16 @@
 const Order = require('../../../models/Order.js')
 
 module.exports = (req, res) => {
-  const { name } = req.body
-  const user_id = req.user.id
+  const { name, email, phone } = req.body
+  const products = req.session.cartProducts
   const status = true
   const createdAt = Date.now()
   // const modifiedAt = '---'
-  const order = new Order({ title, description, done, createdAt, user_id })
+  const order = new Order({ name, email, phone, createdAt, products, status })
   order.save()
     .then(() => {
-      res.redirect('/tasks')
+      req.session.cartProducts = []
+      res.redirect('/cart')
     })
+    .catch(err => { throw err })
 }

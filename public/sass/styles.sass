@@ -187,7 +187,7 @@ footer
 
 .introNav
   position: absolute;
-  bottom: 100px;
+  bottom: 5px;
   width: 100%;
   text-align: center;
 
@@ -285,6 +285,10 @@ footer
   ul.list-inline.deskNav
     display: none;
 
+  .introNav
+    display: none;
+    
+
 // small devices
 
 @media (min-width: 576px) and (max-width: 768px)
@@ -294,15 +298,25 @@ footer
         font-size: 26px;
   ul.list-inline.deskNav
     display: none;
-   
-// medium and large devices
 
-@media (min-width: 769px)
+
+// medium devices
+
+@media (min-width: 769px) and (max-width: 992px)
   .modal-dialog
     width: 650px;
 
   .menu
     display: none;
+
+
+// large devices
+
+@media (min-width: 993px)
+
+  .introNav
+    bottom: 40px;
+
   
 
   

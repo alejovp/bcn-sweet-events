@@ -3,9 +3,7 @@ const collection = 'orders'
 
 const OrdersSchema = new mongoose.Schema({
   status: Boolean,
-  product_id: String,
-  qtty: Number,
-  amount: Number,
+  products: Array,
   createdAt: Number,
   modifiedAt: Number,
   name: String,

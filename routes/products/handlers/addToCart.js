@@ -14,7 +14,7 @@ const Product = require('../../../models/Product.js')
 
 module.exports = (req, res) => {
   const { id, qtty } = req.body
-
+  console.log(id)
   Product.findById(id)
     .then(product => {
       req.session.cartProducts.unshift({product, qtty})

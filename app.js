@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 const mongoose = require('mongoose')
 const session = require('express-session')
+// const FileStore = require('session-file-store')(session)
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -17,10 +18,13 @@ mongoose.Promise = global.Promise
 app.set('view engine', 'pug')
 
 app.use(express.static(path.join(__dirname, 'public')))
+
 app.use(session({
+  name: 'bse-server-session-cookie-id',
   secret: 'this is a secret',
-  resave: false,
-  saveUninitialized: true
+  saveUninitialized: true,
+  resave: false
+  // store: new FileStore()
 }))
 
 app.use((req, res, next) => {
