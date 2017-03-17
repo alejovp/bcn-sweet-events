@@ -10,7 +10,8 @@ module.exports = (req, res) => {
   order.save()
     .then(() => {
       req.session.cartProducts = []
-      res.redirect('/cart')
+      // res.redirect('/cart')
+      res.sendStatus(200)
     })
     .catch(err => { throw err })
 }

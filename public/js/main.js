@@ -119,22 +119,31 @@ $('.remove').click(function (e) {
 })
 
 // Place an order
-// $('#orderForm').submit((e) => {
-//   e.preventDefault()
-//   const name = $(this).find('#name').val()
-//   const email = $(this).find('#email').val()
-//   const phone = $(this).find('#phone').val()
-//   const data = { name, email, phone }
-//   const method = 'POST'
-//   const url = '/cart/orders'
+$('#orderForm').submit(function (e) {
+  e.preventDefault()
+  const name = $(this).find('#name').val()
+  const email = $(this).find('#email').val()
+  const phone = $(this).find('#phone').val()
+  const data = { name, email, phone }
+  const method = 'POST'
+  console.log(email)
 
-//   $.ajax({ url, method, data })
-//     .then(() => {
-//       $('.numberCircle').text('0')
-//       console.log('removed from cart')
-//     })
-//     .catch(() => alert('There was an error taking your order!'))
-// })
+  // Send order email
+  $.ajax({ url: '/mailer', method, data })
+    .then(() => {
+      console.log('Emails has been sent!')
+    })
+    .catch(() => alert('There was an error with your email address!'))
+
+  // Save order in DB
+  $.ajax({ url: '/cart/orders', method, data })
+    .then(() => {
+      $('.numberCircle').text('0')
+      console.log('removed from cart')
+      window.location.reload()
+    })
+    .catch(() => alert('There was an error while taking your order!'))
+})
 
 // Helper functions
 function cartSum (itemPrices) {

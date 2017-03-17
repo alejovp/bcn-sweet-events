@@ -21,6 +21,7 @@
     "express-session": "^1.15.1",
     "mongodb": "^2.2.24",
     "mongoose": "^4.8.6",
+    "nodemailer": "^3.1.7",
     "nodemon": "^1.11.0",
     "pug": "^2.0.0-beta11",
     "session-file-store": "^1.0.0"
