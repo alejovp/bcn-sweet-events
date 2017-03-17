@@ -6,6 +6,10 @@ block main
 
     .cartArticles
       //- articles to create dinamicly
+      if (cartProducts === undefined || cartProducts.length === 0) 
+        div
+          p Aun no has añadido ningún producto al carrito.
+
       each item in cartProducts
         article.row
           .col-sm-5
@@ -58,8 +62,7 @@ block main
           p €
             span.result 0.00
       a.btn.btn-default.col-xs-12.continue(role='button' href=(cartProducts.length !== 0 ? '/products/' + cartProducts[0].product.category : '/products/cupcakes'))
-        |  Seguir Comprando 
-        span.glyphicon.glyphicon-shopping-cart
+        |  Seguir Comprando
 
       a.btn.btn-success.col-xs-12.checkout(role='button', data-toggle='modal', data-target='#login-overlay')
         | Realizar Pedido 

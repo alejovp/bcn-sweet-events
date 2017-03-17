@@ -31,7 +31,10 @@ block main
             span 18.00
 
         a.btn.btn-primary.col-xs-12.addProduct(href="", data-id=`${product.id}`, role='button') Añadir al carrito
-        a.col-sm-12.btn.btn-default(href=`/products/${product.category}`) Seguir comprando
+        a.col-sm-12.btn.btn-default.col-xs-12(href=`/products/${product.category}`) Seguir comprando
+        a.btn.btn-primary.col-xs-12.goCart(href="", data-id=`${product.id}`, role='button') 
+          | Ir al carrito 
+          span.glyphicon.glyphicon-shopping-cart
       .col-xs-12.text-center
         h4 Opiniones de los usuarios
       .col-sm-4.reviewTotal.pull-right

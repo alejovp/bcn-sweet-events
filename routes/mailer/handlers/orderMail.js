@@ -8,8 +8,8 @@ module.exports = (req, res) => {
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: process.env.EMAILER,
-      pass: process.env.EMAIL_PASS
+      user: process.env.EMAILER || 'bcnsweetserver@gmail.com',
+      pass: process.env.EMAIL_PASS || 'admin_12345'
     }
   })
 
