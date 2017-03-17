@@ -60,6 +60,9 @@ $('.proData').on('click', '.addProduct', function (e) {
   const qtty = $(this).closest('.proData').find('select').val()
   const data = { id, qtty }
 
+  $(this).closest('.proData').find('.goCart').removeClass('hide')
+  $(this).addClass('hide')
+
   $.ajax({ url, method, data })
     .then(() => {
       $('.numberCircle').text(Number(cartCount) + 1)
