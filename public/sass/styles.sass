@@ -68,6 +68,10 @@ footer
       text-decoration: none;
       color: black;
 
+#sweetNav
+  position: fixed;
+  z-index: 3;
+
 .navLinks
   display: flex;
   justify-content: space-between;
@@ -75,17 +79,31 @@ footer
   background: transparent;
   z-index: 1;
   .logo
-    padding-left: 15px;
-    padding-top: 15px;
+    padding: 15px 10px 10px 15px;
+    height: 130px;
     display: inline-block;
-    // float: left;
+    border-bottom-right-radius: 66px;
+    .logoImg
+      display: inline-block;
+      width: 170px;
+      height: 105px;
+      background: url(../img/logoNav.png) bottom center no-repeat;
+    .logoImgBlack
+      background: url(../img/logoBlack.png) bottom center no-repeat;
+      display: inline-block;
+      width: 140px;
+      height: 80px;
+      background-size: contain;
+
+
   ul
     padding: 15px;
     list-style: none;
     display: inline-block;
-    // float: right;
     margin: 0;
 
+.nav-colored
+  background-color: rgba(0, 0, 0, 0.78);
 
 .deskNav
   a
@@ -95,7 +113,7 @@ footer
     background: transparent;
     border: none;
     &:hover
-      color: black;
+      color: $project-grey;
 
 .list-inline.movNav
   padding-top: 24px;
@@ -152,10 +170,10 @@ footer
   margin-right: 20px;
   &:hover
     .glyphicon-shopping-cart
-      color: black;
+      color: $project-grey;
     .numberCircle
-      color: black;
-      border: 2px solid black;
+      color: $project-grey;
+      border: 2px solid $project-grey;
 
 .glyphicon-shopping-cart
   color: white;
@@ -283,6 +301,15 @@ footer
 // x-small devices
 
 @media (max-width: 575px)
+  
+  .navLinks
+    .logo
+      height: 100px;
+      .logoImg
+        width: 113px;
+        height: 70px;
+        background-size: contain;
+
   .intro
     div
       p
@@ -298,6 +325,14 @@ footer
 // small devices
 
 @media (min-width: 576px) and (max-width: 768px)
+  .navLinks
+    .logo
+      height: 100px;
+      .logoImg
+        width: 113px;
+        height: 70px;
+        background-size: contain;
+
   .intro
     div
       p

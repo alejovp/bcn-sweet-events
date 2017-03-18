@@ -8,6 +8,7 @@ const app = express()
 const PORT = process.env.PORT || 3000
 const urlDB = process.env.DB_URI || 'mongodb://localhost:27017/b_s_e'
 
+const routerHome = require('./routes/home')
 const routerProducts = require('./routes/products')
 // const routerAdmin = require('./routes/admin')
 const routerCart = require('./routes/cart')
@@ -30,7 +31,6 @@ app.use(session({
 
 app.use((req, res, next) => {
   let cartProducts = req.session.cartProducts
-  // let cartNumber = req.session.cartNumber
   if (!cartProducts) {
     req.session.cartProducts = []
     req.session.cartNumber = 0
@@ -41,13 +41,7 @@ app.use((req, res, next) => {
   next()
 })
 
-app.get('/', (req, res) => {
-  const { cartNumber } = req.session
-  const section = 'home'
-  const paragraph = 'Endulza tu fiesta con nuestros productos elaborados artesanalmente y con nuestras mesas especiales'
-  const urlImg = 'img/Perfil2.jpg'
-  res.render('home', { cartNumber, section, paragraph, urlImg })
-})
+app.use('/', routerHome)
 
 app.use('/products', routerProducts)
 // app.use('/admin', routerAdmin)

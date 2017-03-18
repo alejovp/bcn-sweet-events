@@ -3,6 +3,8 @@
   const menuNav = document.getElementById('menuNav')
   const main = document.getElementsByTagName('main')[0]
   const footer = document.getElementsByTagName('footer')[0]
+  const navToColor = document.getElementById('sweetNav')
+  const navLogo = document.getElementById('navLogo')
 
   let menuDown = false
 
@@ -36,6 +38,16 @@
         })
       }
     })
+  }
+
+  window.onscroll = function () {
+    if (document.body.scrollTop >= 130) {
+      navToColor.classList.add('nav-colored')
+      navLogo.classList.add('nav-colored')
+    } else {
+      navToColor.classList.remove('nav-colored')
+      navLogo.classList.remove('nav-colored')
+    }
   }
 })()
 

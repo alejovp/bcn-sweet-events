@@ -12,8 +12,8 @@ html(lang='en')
     nav#menuNav.slideup
       .navLinks
         .logo
-          a(href='/')
-            img(src='/img/logoBlack.png', alt='')
+          a.logoImgBlack(href='/')
+            //- img(src='/img/logoBlack.png', alt='')
         ul
           li.clMenu
             button.menu
@@ -36,10 +36,10 @@ html(lang='en')
       .container.text-center.menuOption
         a(href='/cart') Shopping Cart
     main
-      nav.navLinks   
-        .logo
-          a(href='/')
-            img(src='/img/logoNav.png', alt='')
+      nav.navLinks#sweetNav 
+        .logo#navLogo
+          a.logoImg(href='/')
+            //- img(src='/img/logoNav.png', alt='')
 
         ul.list-inline.deskNav
           li
