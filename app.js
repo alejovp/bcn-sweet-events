@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use(session({
   name: 'bse-server-session-cookie-id',
-  secret: 'this is a secret',
+  secret: process.env.SECRET,
   saveUninitialized: true,
   resave: false
   // store: new FileStore()

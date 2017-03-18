@@ -22,7 +22,7 @@
 
   for (let i = 0; i < menu.length; i++) {
     menu[i].addEventListener('click', function (e) {
-      e.preventDefault()
+      window.scrollTo(0, 0)
 
       if (menuDown) {
         slideMenu(menuNav)
