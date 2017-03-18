@@ -1,0 +1,37 @@
+
+// .logoImgBlack
+//       background: url(../img/logoBlack.png) bottom center no-repeat;
+//       display: inline-block;
+//       background-size: contain;
+
+.parallax
+  perspective: 1px;
+  position: relative;
+  height: 90vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+.parallax_layer
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+.parallax_layer-base
+
+  transform: translateZ(1);
+  p
+    padding: 50px;
+    background-color: white;
+
+.parallax_layer-back
+  
+  transform: translateZ(-1px) scale(3);
+  background: url(../img/home/mesa-peppa.JPG) bottom center no-repeat;
+  background-size: contain;
+
+.parallax_group
+  position: relative;
+  height: 100vh;
+  transform-style: preserve-3d;
