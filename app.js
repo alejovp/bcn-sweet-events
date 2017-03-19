@@ -1,12 +1,16 @@
 const express = require('express')
+const fs = require('fs')
 const path = require('path')
 const mongoose = require('mongoose')
 const session = require('express-session')
+
+const thereIsDotEnv = fs.existsSync('.env')
+if (thereIsDotEnv) require('dotenv').config()
 // const FileStore = require('session-file-store')(session)
 
 const app = express()
-const PORT = process.env.PORT || 3000
-const urlDB = process.env.DB_URI || 'mongodb://localhost:27017/b_s_e'
+const PORT = process.env.PORT
+const urlDB = process.env.DB_URI
 
 const routerHome = require('./routes/home')
 const routerProducts = require('./routes/products')
@@ -30,12 +34,14 @@ app.use(session({
 }))
 
 app.use((req, res, next) => {
-  let cartProducts = req.session.cartProducts
+  let { cartProducts } = req.session
+  let order = req.session.order || ''
   if (!cartProducts) {
     req.session.cartProducts = []
     req.session.cartNumber = 0
   } else {
     req.session.cartNumber = cartProducts.length
+    req.session.order = order
   }
 
   next()

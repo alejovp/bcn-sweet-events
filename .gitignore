@@ -3,3 +3,4 @@ backup
 node_modules
 public/bower_components
 .notes
+.env

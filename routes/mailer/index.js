@@ -7,6 +7,7 @@ router.use(bodyParser.json())
 
 const orderMail = require('./handlers/orderMail.js')
 
-router.post('/', orderMail)
+// router.post('/', orderMail)
+router.get('/', orderMail)
 
 module.exports = router

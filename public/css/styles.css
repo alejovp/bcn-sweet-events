@@ -109,9 +109,10 @@
 /* line 41, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_product.sass */
 .addProduct:hover, .continue:hover {
   background: #C29F31;
+  color: white;
 }
 
-/* line 43, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_product.sass */
+/* line 44, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_product.sass */
 .addProduct:hover .glyphicon-shopping-cart, .continue:hover .glyphicon-shopping-cart {
   color: white;
 }

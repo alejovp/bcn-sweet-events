@@ -8,10 +8,9 @@ module.exports = (req, res) => {
   // const modifiedAt = '---'
   const order = new Order({ name, email, phone, createdAt, products, status })
   order.save()
-    .then(() => {
-      req.session.cartProducts = []
-      // res.redirect('/cart')
-      res.sendStatus(200)
+    .then((order) => {
+      req.session.order = order
+      res.redirect('/mailer')
     })
     .catch(err => { throw err })
 }

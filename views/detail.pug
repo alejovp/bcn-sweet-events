@@ -30,10 +30,10 @@ block main
           p €
             span 18.00
 
-        a.btn.btn-primary.col-xs-12.addProduct(href="", data-id=`${product.id}`, role='button') Añadir al carrito 
+        a.btn.col-xs-12.addProduct(href="", data-id=`${product.id}`, role='button') Añadir al carrito 
           span.glyphicon.glyphicon-shopping-cart
           span.glyphicon.glyphicon-plus-sign
-        a.btn.btn-primary.col-xs-12.goCart.hide(href="/cart", role='button') 
+        a.btn.btn-primary.col-xs-12.goCart(href="/cart", role='button') 
           | Ir al carrito 
           span.glyphicon.glyphicon-shopping-cart
         a.col-sm-12.btn.btn-default.col-xs-12(href=`/products/${product.category}`) Seguir comprando

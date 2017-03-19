@@ -13,10 +13,11 @@ module.exports = (req, res) => {
     }
   })
 
-  // const products =
-  const { name, email } = req.body
+  const { order } = req.session
+  console.log(order)
+  const { name, email } = order
 
-  let cutomerMail = {
+  let customerMail = {
     // from: process.env.EMAILER,
     to: `${email}`,
     bcc: 'bcnsweetest@gmail.com',
@@ -25,11 +26,12 @@ module.exports = (req, res) => {
   }
 
   // send mail with defined transport object
-  transporter.sendMail(cutomerMail,
+  transporter.sendMail(customerMail,
     (err, response) => {
       if (err) {
         res.send('We had problems sending the email')
       }
-      res.sendStatus(200)
+      req.session.cartProducts = []
+      res.redirect('/cart')
     })
 }
