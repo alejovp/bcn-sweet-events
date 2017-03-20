@@ -8,9 +8,9 @@
   "main": "index.js",
   "scripts": {
     "prestart": "npm install",
-    "dev": "nodemon app.js",
+    "dev": "nodemon index",
     "postinstall": "./node_modules/bower/bin/bower install",
-    "start": "node app.js"
+    "start": "node index"
   },
   "author": "",
   "license": "ISC",
