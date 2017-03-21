@@ -1,0 +1,40 @@
+<form class="col-sm-6" action="/api/products" method="POST" role="form">
+    <legend>Add Product</legend>
+    <div class="form-group">
+        <label for="category">Category</label>
+        <select class="selectpicker form-control" name="category" id="category">
+            <option value="cupcakes">Cupcakes</option>
+            <option value="cakes">Cakes</option>
+            <option value="tables">Party Tables</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="">Title</label>
+        <input type="text" class="form-control" id="" placeholder="Product Title" name="title">
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea name="description" id="description" cols="30" rows="5" class="form-control"></textarea>
+    </div>
+    <div class="checkbox">
+      <label>
+          <input type="checkbox" name="ingredients" value="Base esponjosa de vainilla">Base Vainilla
+      </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" name="ingredients" value="Suave crema de vainilla">Crema Vainilla</label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" name="ingredients" value="Suave crema de chocolate">Crema Chocolate</label>
+    </div>
+    
+    <div class="form-group col-xs-4">
+        <label for="">Price</label>
+        <input type="number" class="form-control" id="" placeholder="Price" name="price">
+    </div>
+    <div class="form-group col-xs-12">
+        <button type="submit" ng-click="addProduct($event)" class="btn btn-primary">Submit</button>
+    </div>
+</form>

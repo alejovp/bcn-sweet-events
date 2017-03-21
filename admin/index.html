@@ -4,95 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <title>BCN Sweet Events</title>
-    <link rel="stylesheet" href="../public/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster|Marck+Script" rel="stylesheet">
-    <link rel="stylesheet" href="../public/css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body>
-    <nav class="slideup" id="menuNav">
-        <div class="navLinks">
-            <div class="logo">
-                <a href="/"><img src="img/logoBlack.png" alt=""></a>
-            </div>
-            <ul>
-                <li><a class="menu" href="#">Menu</a></li>
-            </ul>
-            <hr>
+    <nav class="navLinks adminNav">
+        <div class="logo">
+            <!-- <a href="#">Bcn Sweet Events</a> -->
+            <a href="/admin/#!/" class="logoImg"></a>
         </div>
-        <div class="container text-center menuOption">
-            <a href="/cupcakes">Sweet Cupcakes</a>
-        </div>
-        <div class="container text-center menuOption">
-            <a href="#">Sweet Cakes</a>
-        </div>
-        <div class="container text-center menuOption">
-            <a href="#">Sweet Party Tables</a>
-        </div>
-        <div class="container text-center menuOption">
-            <a href="/register">Register</a>
-        </div>
-        <div class="container text-center menuOption">
-            <a href="/register">Log In</a>
-        </div>
-        <div class="container text-center menuOption">
-            <a href="#">About Us</a>
-        </div>
-        <div class="container text-center menuOption">
-            <a href="#">Contact</a>
-        </div>
+        <!-- <ul class="list-inline deskNav">
+            <li>
+                <a class="btn" href="#">Cupcakes</a>
+            </li>
+            <li>
+                <a class="btn" href="#">Cakes</a>
+            </li>
+            <li>
+                <a class="btn" href="#">Party Tables</a>
+            </li>
+        </ul> -->
+        <ul class="list-inline movNav">
+            <li>
+                <a class="btn" href="#">Log In</a>
+            </li>
+            <li>
+                <a class="btn" href="#">Log Out</a>
+            </li>
+        </ul>
     </nav>
-    <main class="adminColor">
-        <nav class="navLinks">
-            <div class="logo">
-                <!-- <a href="#">Bcn Sweet Events</a> -->
-                <a href="/"><img src="img/logoNav.png" alt=""></a>
-            </div>
-            <ul>
-                <li><a class="menu" href="#">Menu</a></li>
-            </ul>
-            <hr>
-        </nav>
-        <section class="intro">
+    <main class="row">
+        <section class="introAdmin">
             <div>
                 <p>
                     Admin Section
                 </p>
             </div>
         </section>
-        <section class="container adminContent" ng-controller="ProductCtrl">
-            <form class="col-sm-6" action="" method="POST" role="form">
-                <legend>Add Product</legend>
-                <div class="form-group">
-                    <label for="category">Category</label>
-                    <select class="selectpicker form-control" name="category" id="category">
-                        <option value="cupcake">Cupcake</option>
-                        <option value="cake">Cake</option>
-                        <option value="table">Party Table</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="">Title</label>
-                    <input type="text" class="form-control" id="" placeholder="Product Title" name="title">
-                </div>
-                <div class="form-group">
-                    <label for="description">Description</label>
-                    <textarea name="description" id="description" cols="30" rows="5" class="form-control"></textarea>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" value="">Option 1</label>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" value="">Option 2</label>
-                </div>
-                <div class="checkbox disabled">
-                    <label>
-                        <input type="checkbox" value="" disabled>Option 3</label>
-                </div>
-                <button type="" ng-click="addProduct($event)" class="btn btn-primary">Submit</button>
-            </form>
+        <section class="container adminContent col-xs-2">
+            <ul class="">
+                <li><a href="/admin/#!/products">Products</a></li>
+                <li><a href="/admin/#!/addProducts">Add Products</a></li>
+                <li><a href="/admin/#!/orders">Orders</a></li>
+
+            </ul>
+        </section>
+        <section class="container adminContent col-xs-10">
+            <ng-view></ng-view>
         </section>
     </main>
     <footer>
@@ -101,9 +61,10 @@
             <li><a href="https://es-es.facebook.com/bcnsweetevents" target="_blank">Facebook</a></li>
         </ul>
     </footer>
-    <script src="../public/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="../public/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../public/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-route/angular-route.min.js"></script>
     <!-- <script src="js/main.js"></script> -->
     <script src="adminApp.js"></script>
 </body>
