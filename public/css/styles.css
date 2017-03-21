@@ -245,32 +245,31 @@ td.price {
   padding-bottom: 250px;
 }
 
-/* line 1, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_admin.sass */
+/* line 4, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_admin.sass */
 .navLinks.adminNav {
-  background-color: grey;
+  border-bottom: 2px solid #BDBBBB;
 }
 
-/* line 4, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_admin.sass */
+/* line 8, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_admin.sass */
 .introAdmin {
   margin: 0;
   width: 100%;
 }
 
-/* line 7, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_admin.sass */
+/* line 11, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_admin.sass */
 .introAdmin div {
   margin-top: 50px;
 }
 
-/* line 9, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_admin.sass */
+/* line 13, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_admin.sass */
 .introAdmin div p {
-  font-family: 'Marck Script', cursive;
   font-size: 30px;
   width: 70%;
   margin: auto;
   text-align: center;
 }
 
-/* line 16, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_admin.sass */
+/* line 20, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_admin.sass */
 .adminColor {
   background-color: grey;
 }

@@ -5,8 +5,6 @@ module.exports = (req, res) => {
 
   Product.findByIdAndRemove(id)
     .then((product) => {
-      // console.log(`Task has been removed`)
-      // res.redirect('/tasks')
       res.status(200).json(product)
     })
     .catch(err => res.status(500).json(err))

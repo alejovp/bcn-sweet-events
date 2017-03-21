@@ -6,6 +6,7 @@ const session = require('express-session')
 const app = express()
 const appRoutes = require('./app_routes')
 const apiRoutes = require('./api_routes')
+const authRoutes = require('./auth')
 
 app.set('view engine', 'pug')
 app.set('views', (path.join(__dirname, 'views')))
@@ -37,5 +38,6 @@ app.use((req, res, next) => {
 app.use('/admin', express.static(path.join(__dirname, '../admin')))
 app.use('/', appRoutes)
 app.use('/api', apiRoutes)
+app.use('/auth', authRoutes)
 
 module.exports = app

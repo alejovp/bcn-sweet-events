@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>BCN Sweet Events</title>
+    <title>BSN Admin</title>
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster|Marck+Script" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
@@ -39,15 +39,15 @@
         <section class="introAdmin">
             <div>
                 <p>
-                    Admin Section
+                    Hola {here username}!
                 </p>
             </div>
         </section>
         <section class="container adminContent col-xs-2">
             <ul class="">
-                <li><a href="/admin/#!/products">Products</a></li>
-                <li><a href="/admin/#!/addProducts">Add Products</a></li>
-                <li><a href="/admin/#!/orders">Orders</a></li>
+                <li><a href="/admin/#!/products">Productos</a></li>
+                <li><a href="/admin/#!/addProducts">Añadir Producto</a></li>
+                <li><a href="/admin/#!/orders">Ordenes</a></li>
 
             </ul>
         </section>
@@ -66,7 +66,13 @@
     <script src="/bower_components/angular/angular.min.js"></script>
     <script src="/bower_components/angular-route/angular-route.min.js"></script>
     <!-- <script src="js/main.js"></script> -->
-    <script src="adminApp.js"></script>
+    <script src="/bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
+    <script src="/admin/js/adminApp.js"></script>
+    <script src="/admin/js/run.js"></script>
+    <script src="/admin/js/services/AuthFactory.js"></script>
+    <script src="/admin/js/services/StorageFactory.js"></script>
+    <script src="/admin/js/interceptors/AuthInterceptor.js"></script>
+    <script src="/admin/js/controllers/LoginCtrl.js"></script>
 </body>
 
 </html>

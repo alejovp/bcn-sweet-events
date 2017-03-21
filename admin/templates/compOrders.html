@@ -7,10 +7,11 @@
   </div>
 </div>
 <div class="row">
-  <div ng-repeat="order in orders | filter: { status: true }" class = "col-sm-6 col-md-4">
+  <div ng-repeat="order in orders | filter: { status: false }" class = "col-sm-6 col-md-4">
       <div class = "thumbnail">
         <div>
           <p>Creada: {{order.createdAt | date:'medium'}}</p>
+          <p>Completada: {{order.modifiedAt | date:'medium'}}</p>
           <p>Order Id:</p>
           <p>{{order._id}}</p>
         </div>
@@ -50,15 +51,15 @@
              </tbody>
            </table>
            
-           <p>
+           <!-- <p>
               <a href = "#" ng-click="orderDone($event, order._id)" class = "btn btn-primary" role = "button">
-                 Orden Terminada
+                 Terminada
               </a> 
               
               <a href = "#" class = "btn btn-default" role = "button">
                  Button
               </a>
-           </p>
+           </p> -->
           
         </div>
       </div>
