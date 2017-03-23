@@ -3,8 +3,8 @@
   .controller('AddProductCtrl', AddProductCtrl)
 
   function AddProductCtrl ($scope, DataFactory, $location, Upload) {
-    const ingCupcakes = ['Base Vainilla', 'Base Chocolate', 'Base Zanahoria', 'Base Red Velvet', 'Crema Vainilla', 'Crema Chocolate', 'Crema de Yogurt', 'Crema de Oreo', 'Crema de Nutella']
-    const ingCakes = ['Base Vainilla', 'Base Chocolate', 'Relleno de Nutella', 'Relleno de Vainilla', 'cubierta de Crema...', 'Cubierta de Fondant']
+    const ingCupcakes = ['Base Vainilla', 'Base Chocolate', 'Base Zanahoria', 'Base Red Velvet', 'Crema Vainilla', 'Crema Chocolate', 'Crema de Yogurt', 'Crema de Oreo', 'Crema de Nutella', 'Crema de Mascarpone']
+    const ingCakes = ['Bizcocho de Vainilla', 'Bizcocho de Chocolate', 'Bizcocho de Zanahoria', 'Bizcocho de Plátano', 'Bizcocho de Limón', 'Bizcocho de Naranja', 'Relleno de Nutella', 'Relleno de Vainilla', 'Relleno de Mascarpone', 'Relleno dulce de leche', 'cubierta de Crema...', 'Cubierta de Fondant']
 
     $scope.showIngredients = () => {
       if ($scope.category === 'cupcakes') {
