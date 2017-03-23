@@ -12,20 +12,8 @@
 <body>
     <nav ng-controller="NavCtrl" class="navLinks adminNav">
         <div class="logo">
-            <!-- <a href="#">Bcn Sweet Events</a> -->
             <a href="/admin/#!/" class="logoImg"></a>
         </div>
-        <!-- <ul class="list-inline deskNav">
-            <li>
-                <a class="btn" href="#">Cupcakes</a>
-            </li>
-            <li>
-                <a class="btn" href="#">Cakes</a>
-            </li>
-            <li>
-                <a class="btn" href="#">Party Tables</a>
-            </li>
-        </ul> -->
         <ul class="list-inline movNav">
             <!-- <li>
                 <a class="btn" href="#">Log In</a>
@@ -51,6 +39,9 @@
     <script src="/bower_components/angular-route/angular-route.min.js"></script>
     <!-- <script src="js/main.js"></script> -->
     <script src="/bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
+    <!--shim is needed to support non-html5 browsers -->
+    <script src="/bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
+    <script src="/bower_components/ng-file-upload/ng-file-upload.min.js"></script>
     <script src="/admin/js/adminApp.js"></script>
     <script src="/admin/js/run.js"></script>
     <script src="/admin/js/config.js"></script>

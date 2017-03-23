@@ -1,1 +1,1 @@
-angular.module('adminApp', ['ngRoute', 'angular-jwt'])
+angular.module('adminApp', ['ngRoute', 'angular-jwt', 'ngFileUpload'])

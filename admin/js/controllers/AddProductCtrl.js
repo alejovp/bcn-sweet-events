@@ -1,6 +1,8 @@
-angular.module('adminApp')
+(function () {
+  angular.module('adminApp')
+  .controller('AddProductCtrl', AddProductCtrl)
 
-  .controller('AddProductCtrl', function ($scope, DataFactory, $location) {
+  function AddProductCtrl ($scope, DataFactory, $location, Upload) {
     const ingCupcakes = ['Base Vainilla', 'Base Chocolate', 'Base Zanahoria', 'Base Red Velvet', 'Crema Vainilla', 'Crema Chocolate', 'Crema de Yogurt', 'Crema de Oreo', 'Crema de Nutella']
     const ingCakes = ['Base Vainilla', 'Base Chocolate', 'Relleno de Nutella', 'Relleno de Vainilla', 'cubierta de Crema...', 'Cubierta de Fondant']
 
@@ -25,12 +27,34 @@ angular.module('adminApp')
       }
     }
 
+    $scope.fileSelected = (files) => {
+      if (files && files.length) {
+        $scope.file = files[0]
+      }
+    }
+
+    $scope.uploadFile = function () {
+      const url = '/api/upload'
+      const file = $scope.file
+
+      // show spinning when uploading
+      $scope.uploading = true
+      document.querySelector('.preview').onload = () => {
+        $scope.$apply(() => $scope.uploading = false)
+      }
+
+      Upload.upload({ url, file })
+        .success(({imageLink}) => $scope.imageLink = imageLink)
+        // .progress( console.log )
+    }
+
     $scope.addProd = (e) => {
       e.preventDefault()
-      const { category, title, imgURL, description, selectedIngredients, price } = $scope
+      const { category, title, imageLink: imgURL, description, selectedIngredients, price } = $scope
 
       DataFactory.addProduct(category, title, imgURL, description, selectedIngredients, price)
         .then(DataFactory.getProducts)
         .then($location.path('/products'))
     }
-  })
+  }
+})()

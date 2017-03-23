@@ -1,4 +1,3 @@
-
 <section class="adminMenu col-xs-2">
     <div class="introAdmin">
         <p>
@@ -14,52 +13,80 @@
 </section>
 <section class="adminContent col-xs-10">
     <div class="row">
-      <form class="col-sm-6 col-sm-offset-3" ng-submit="addProd($event)" role="form">
-          <legend>Add Product</legend>
-          <div class="form-group">
-              <label for="category">Categoría</label>
-              <select class="selectpicker form-control" ng-model="category" id="category" ng-change="showIngredients()">
-                  <option value="cupcakes">Cupcakes</option>
-                  <option value="cakes">Cakes</option>
-                  <option value="tables">Party Tables</option>
-              </select>
-          </div>
-          <div class="form-group">
-              <label for="">Título</label>
-              <input type="text" class="form-control" id="" placeholder="Product Title" ng-model="title">
-          </div>
-          <div class="form-group">
-              <label for="">Imagen (URL)</label>
-              <input type="text" class="form-control" id="" placeholder="Product Title" ng-model="imgURL">
-          </div>
-          <div class="form-group">
-              <label for="description">Descripción</label>
-              <textarea ng-model="description" id="description" cols="30" rows="5" class="form-control"></textarea>
-          </div>
-          <div class="form-group">
-              <label for="">Ingredientes</label>
-          </div>
-          <div class="form-group ">
-              <div class="checkbox col-sm-6" ng-repeat="ingredient in ingList track by $index">
-                <label>
-                    <input
-                      type="checkbox"
-                      title="{{ ingredient }}"
-                      ng-click="$parent.toggleSelection($event)"
-                    >
-                    <span>{{ingredient}}</span>
+        <form class="col-sm-6" ng-submit="addProd($event)" role="form">
+            <legend>Add Product</legend>
+            <div class="form-group">
+                <label for="category">Categoría</label>
+                <select class="selectpicker form-control" ng-model="category" id="category" ng-change="showIngredients()">
+                    <option value="cupcakes">Cupcakes</option>
+                    <option value="cakes">Cakes</option>
+                    <option value="tables">Party Tables</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="">Título</label>
+                <input type="text" class="form-control" id="" placeholder="Product Title" ng-model="title">
+            </div>
+            <!-- <div class="form-group">
+                <label for="">Imagen (URL)</label>
+                <input type="text" class="form-control" id="" placeholder="Product Title" ng-model="imgURL">
+            </div> -->
+            <div class="form-group">
+                <label for="description">Descripción</label>
+                <textarea ng-model="description" id="description" cols="30" rows="5" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="">Ingredientes</label>
+            </div>
+            <div class="form-group ">
+                <div class="checkbox col-sm-6" ng-repeat="ingredient in ingList track by $index">
+                    <label>
+                        <input type="checkbox" title="{{ ingredient }}" ng-click="$parent.toggleSelection($event)">
+                        <span>{{ingredient}}</span>
+                    </label>
+                </div>
+                <hr>
+            </div>
+            <div class="form-group prodPrice">
+                <label for="">Precio
+                    <input type="number" class="form-control" id="" placeholder="Price" ng-model="price">
                 </label>
-              </div>
-              <hr>
-          </div>
-          <div class="form-group prodPrice">
-              <label for="">Precio
-                <input type="number" class="form-control" id="" placeholder="Price" ng-model="price">
-              </label>
-          </div>
-          <div class="form-group col-xs-12">
-              <button type="submit" ng-click="addProduct($event)" class="btn btn-primary">Añadir Producto</button>
-          </div>
-      </form>
+            </div>
+            <div class="form-group col-xs-12">
+                <button type="submit" ng-click="addProduct($event)" class="btn btn-primary">Añadir Producto</button>
+            </div>
+        </form>
+        <div class="col-sm-6 imgCont">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>Cargar Imagen</strong> <small> </small></div>
+                <div class="panel-body">
+                    <div class="input-group image-preview">
+                        <input ng-model="file.name" placeholder="" type="text" class="form-control image-preview-filename" ng-disabled="true">
+                        <!-- don't give a name === doesn't send on POST/GET -->
+                        <span class="input-group-btn">
+              <!-- image-preview-clear button -->
+              <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+              <span class="glyphicon glyphicon-remove"></span> Clear </button>
+                        <!-- image-preview-input -->
+                        <div class="btn btn-default image-preview-input">
+                            <span class="glyphicon glyphicon-folder-open"></span>
+                            <span class="image-preview-input-title">Buscar</span>
+                            <input ngf-select="fileSelected($files)" type="file" accept="'image/*'" name="file" />
+                            <!-- rename it -->
+                        </div>
+                        <button ng-click="uploadFile()" type="button" class="btn btn-labeled btn-primary">
+                            <i ng-hide="uploading" class="glyphicon glyphicon-upload"></i>
+                            <i ng-show="uploading" class="glyphicon glyphicon-refresh"></i>
+                            <span>Subir Imagen</span>
+                        </button>
+                        </span>
+                    </div>
+                    <!-- /input-group image-preview [TO HERE]-->
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <img class="img-responsive preview" ng-src="{{ imageLink }}" alt="">
+        </div>
     </div>
 </section>

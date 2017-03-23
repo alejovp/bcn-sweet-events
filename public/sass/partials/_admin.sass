@@ -27,8 +27,6 @@ $project-pink: #F77EB5;
   margin: 0;
   padding: 15px 0px 15px 15px;
 
-// .adminColor
-//   background-color: grey;
 
 .adminContent
   margin-top: 15px;
@@ -37,10 +35,12 @@ $project-pink: #F77EB5;
     background-color: $project-grey;
     margin-right: 15px;
     margin: 0;
+    padding-left: 15px;
   form
     background-color: white;
     margin-top: 15px;
     margin-bottom: 15px;
+    border-radius: 4px;
 
 .activeBtn
   background-color: $project-grey;
@@ -51,6 +51,66 @@ $project-pink: #F77EB5;
 .prodPrice
   width: 20%;
 
+.imgCont
+  margin-top: 15px;
+
+.upload-drop-zone
+  height: 200px;
+  border-width: 2px;
+  margin-bottom: 20px;
+
+/* skin.css Style*/
+.upload-drop-zone
+  color: #ccc;
+  border-style: dashed;
+  border-color: #ccc;
+  line-height: 200px;
+  text-align: center
+
+.upload-drop-zone.drop
+  color: #222;
+  border-color: #222;
+
+
+.image-preview-input
+  position: relative;
+  overflow: hidden;
+  margin: 0px;
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+
+.image-preview-input input[type=file]
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+
+.image-preview-input-title
+  margin-left: 2px
+
+.glyphicon-refresh 
+  animation: spin 1s infinite linear;
+  -webkit-animation: spin2 1s infinite linear;
+
+
+@keyframes spin
+  from
+    transform: scale(1) rotate(0deg);
+  to
+    transform: scale(1) rotate(360deg);
+
+
+@-webkit-keyframes spin2
+  from
+    -webkit-transform: rotate(0deg);
+  to
+    -webkit-transform: rotate(360deg);
 
 
 

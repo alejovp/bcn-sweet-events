@@ -14,7 +14,7 @@ block main
           .col-sm-6.col-md-4
             .thumbnail.proData
               a(href=`/products/details/${product.id}`)
-               img(src='/img/cup-nutella.jpg', alt='...')
+               img(src=`${product.imgURL}`, alt='...')
 
               .caption
                 h3.itemName=product.title
