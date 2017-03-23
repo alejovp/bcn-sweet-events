@@ -4,7 +4,7 @@ block main
   .container.proDetail.proData
     .row
       .col-sm-4
-        img.img-responsive.itemImg(src='/img/cup-nutella.jpg', alt='')
+        img.img-responsive.itemImg(src=`${product.imgURL}`, alt='')
       .col-sm-4
         div
           h4.itemName= product.title
