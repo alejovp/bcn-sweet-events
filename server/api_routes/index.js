@@ -14,7 +14,7 @@ const doneOrder = require('./handlers/doneOrder.js')
 router
   .use(bodyParser.urlencoded({ extended: false }))
   .use(bodyParser.json())
-  .use(passport.authenticate('jwt', { session: false }))
+  // .use(passport.authenticate('jwt', { session: false }))
 
 router
   .get('/orders', getOrders)

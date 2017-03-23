@@ -3,8 +3,11 @@ extends layout
 block main
   
   section.proArticles
-    h3  Estos son nuestros Cupcakes
+    if (section == 'cupcakes')
+      h3  Estos son nuestros Cupcakes
     //- articles to create dinamicly
+    if (section == 'cakes')
+      h3  Estas son nuestras Tartas
     .row
       each product in products
         if (product.category === section)

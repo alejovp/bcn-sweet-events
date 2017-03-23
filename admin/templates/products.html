@@ -1,34 +1,40 @@
-<div class = "row">
-   
-   <div ng-repeat="product in products" class = "col-sm-6 col-md-3">
-      <div class = "thumbnail">
-        <img src = "/img/cup-nutella.jpg" alt = "Generic placeholder thumbnail">
-       
-        <div class = "caption">
-           <h3>{{product.title}}</h3>
-           <p>{{product.description}}</p>
-           <ul>
-             <li ng-repeat="ingredient in product.ingredients">
-               {{ingredient}}
-             </li>
-           </ul>
-           <p>
-              <a href = "#" ng-click="rmvProduct($event, product._id)" class = "btn btn-primary" role = "button">
+
+<section class="adminMenu col-xs-2">
+    <div class="introAdmin">
+        <p>
+            Hola {{username}}!
+        </p>
+    </div>
+    <ul class="list-unstyled">
+        <li><a href="/admin/#!/home">Dashboard</a></li>
+        <li class="activeBtn"><a href="/admin/#!/products">Productos</a></li>
+        <li><a href="/admin/#!/addProducts">Añadir Producto</a></li>
+        <li><a href="/admin/#!/orders">Ordenes</a></li>
+    </ul>
+</section>
+<section class="adminContent col-xs-10">
+    <div class="row">
+        <div ng-repeat="product in products" class="prodItem col-sm-6 col-md-3">
+            <div class="thumbnail">
+                <img src="/img/cup-nutella.jpg" alt="Generic placeholder thumbnail">
+                <div class="caption">
+                    <h3>{{product.title}}</h3>
+                    <p>{{product.description}}</p>
+                    <ul>
+                        <li ng-repeat="ingredient in product.ingredients">
+                            {{ingredient}}
+                        </li>
+                    </ul>
+                    <p>
+                        <a href="#" ng-click="rmvProduct($event, product._id)" class="btn btn-primary" role="button">
                  Remove
-              </a> 
-              
-              <a href = "#" class = "btn btn-default" role = "button">
+              </a>
+                        <a href="#" class="btn btn-default" role="button">
                  Button
               </a>
-           </p>
-          
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
-   </div>
-</div>
-
-<!-- <ul>
-    <li ng-repeat="product in products">
-      {{product.title}}
-    </li>
-</ul> -->
+    </div>
+</section>

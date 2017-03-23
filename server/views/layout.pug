@@ -65,9 +65,9 @@ html(lang='en')
           p.introNav
             a.btn.introBtns(href='') About us
             a.btn.introBtns(href='') Contact
-        if (section == 'cupcakes')
+        if (section == 'cupcakes' || section == 'cakes')
           p.introNav
-            a.btn.introBtns(href='#cupcakes') Pedido Personalizado
+            a.btn.introBtns(href=`#${section}`) Pedido Personalizado
 
       block main
     footer

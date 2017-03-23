@@ -1,40 +1,75 @@
-<form class="col-sm-6" action="/api/products" method="POST" role="form">
-    <legend>Add Product</legend>
-    <div class="form-group">
-        <label for="category">Category</label>
-        <select class="selectpicker form-control" name="category" id="category">
-            <option value="cupcakes">Cupcakes</option>
-            <option value="cakes">Cakes</option>
-            <option value="tables">Party Tables</option>
-        </select>
+
+<section class="adminMenu col-xs-2">
+    <div class="introAdmin">
+        <p>
+            Hola {{username}}!
+        </p>
     </div>
-    <div class="form-group">
-        <label for="">Title</label>
-        <input type="text" class="form-control" id="" placeholder="Product Title" name="title">
+    <ul class="list-unstyled">
+        <li><a href="/admin/#!/home">Dashboard</a></li>
+        <li><a href="/admin/#!/products">Productos</a></li>
+        <li class="activeBtn"><a href="/admin/#!/addProducts">Añadir Producto</a></li>
+        <li><a href="/admin/#!/orders">Ordenes</a></li>
+    </ul>
+</section>
+<section class="adminContent col-xs-10">
+    <div class="row">
+      <form class="col-sm-6 col-sm-offset-3" ng-submit="addProd($event)" role="form">
+          <legend>Add Product</legend>
+          <div class="form-group">
+              <label for="category">Categoría</label>
+              <select class="selectpicker form-control" ng-model="category" id="category" ng-change="showIngredients()">
+                  <option value="cupcakes">Cupcakes</option>
+                  <option value="cakes">Cakes</option>
+                  <option value="tables">Party Tables</option>
+              </select>
+          </div>
+          <div class="form-group">
+              <label for="">Título</label>
+              <input type="text" class="form-control" id="" placeholder="Product Title" ng-model="title">
+          </div>
+          <div class="form-group">
+              <label for="">Imagen (URL)</label>
+              <input type="text" class="form-control" id="" placeholder="Product Title" ng-model="imgURL">
+          </div>
+          <div class="form-group">
+              <label for="description">Descripción</label>
+              <textarea ng-model="description" id="description" cols="30" rows="5" class="form-control"></textarea>
+          </div>
+          <div class="form-group">
+              <label for="">Ingredientes</label>
+          </div>
+          <div class="form-group ">
+              
+              <div class="checkbox col-sm-6" ng-repeat="ingredient in ingList">
+                <label>
+                    <input type="checkbox" ng-model="ingredients" ng-true-value="'ingredient'" ng-false-value="">{{ingredient}}
+                </label>
+              </div>
+              <hr>
+          </div>
+          <!-- <div class="checkbox">
+              <label>
+                  <input type="checkbox" name="ingredients" value="Base esponjosa de vainilla">Base Vainilla
+              </label>
+          </div>
+          <div class="checkbox">
+              <label>
+                  <input type="checkbox" name="ingredients" value="Suave crema de vainilla">Crema Vainilla
+              </label>
+          </div>
+          <div class="checkbox">
+              <label>
+                  <input type="checkbox" name="ingredients" value="Suave crema de chocolate">Crema Chocolate</label>
+          </div> -->
+          <div class="form-group prodPrice">
+              <label for="">Precio
+                <input type="number" class="form-control" id="" placeholder="Price" ng-model="price">
+              </label>
+          </div>
+          <div class="form-group col-xs-12">
+              <button type="submit" ng-click="addProduct($event)" class="btn btn-primary">Añadir Producto</button>
+          </div>
+      </form>
     </div>
-    <div class="form-group">
-        <label for="description">Description</label>
-        <textarea name="description" id="description" cols="30" rows="5" class="form-control"></textarea>
-    </div>
-    <div class="checkbox">
-      <label>
-          <input type="checkbox" name="ingredients" value="Base esponjosa de vainilla">Base Vainilla
-      </label>
-    </div>
-    <div class="checkbox">
-        <label>
-            <input type="checkbox" name="ingredients" value="Suave crema de vainilla">Crema Vainilla</label>
-    </div>
-    <div class="checkbox">
-        <label>
-            <input type="checkbox" name="ingredients" value="Suave crema de chocolate">Crema Chocolate</label>
-    </div>
-    
-    <div class="form-group col-xs-4">
-        <label for="">Price</label>
-        <input type="number" class="form-control" id="" placeholder="Price" name="price">
-    </div>
-    <div class="form-group col-xs-12">
-        <button type="submit" ng-click="addProduct($event)" class="btn btn-primary">Submit</button>
-    </div>
-</form>
+</section>

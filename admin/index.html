@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <nav class="navLinks adminNav">
+    <nav ng-controller="NavCtrl" class="navLinks adminNav">
         <div class="logo">
             <!-- <a href="#">Bcn Sweet Events</a> -->
             <a href="/admin/#!/" class="logoImg"></a>
@@ -27,35 +27,19 @@
             </li>
         </ul> -->
         <ul class="list-inline movNav">
-            <li>
+            <!-- <li>
                 <a class="btn" href="#">Log In</a>
-            </li>
+            </li> -->
             <li>
-                <a class="btn" href="#">Log Out</a>
+                <a class="btn" ng-show="loggedUser" href="#" ng-click="logout()">Log Out</a>
             </li>
         </ul>
     </nav>
-    <main class="row">
-        <section class="introAdmin">
-            <div>
-                <p>
-                    Hola {here username}!
-                </p>
-            </div>
-        </section>
-        <section class="container adminContent col-xs-2">
-            <ul class="">
-                <li><a href="/admin/#!/products">Productos</a></li>
-                <li><a href="/admin/#!/addProducts">Añadir Producto</a></li>
-                <li><a href="/admin/#!/orders">Ordenes</a></li>
-
-            </ul>
-        </section>
-        <section class="container adminContent col-xs-10">
-            <ng-view></ng-view>
-        </section>
-    </main>
-    <footer>
+    <div class="row adminBody">
+        <ng-view></ng-view>
+        
+    </div>
+    <footer ng-show="loggedUser">
         <ul class="list-inline">
             <li><a href="">Instagram</a></li>
             <li><a href="https://es-es.facebook.com/bcnsweetevents" target="_blank">Facebook</a></li>
@@ -69,10 +53,16 @@
     <script src="/bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
     <script src="/admin/js/adminApp.js"></script>
     <script src="/admin/js/run.js"></script>
+    <script src="/admin/js/config.js"></script>
     <script src="/admin/js/services/AuthFactory.js"></script>
     <script src="/admin/js/services/StorageFactory.js"></script>
+    <script src="/admin/js/services/DataFactory.js"></script>
     <script src="/admin/js/interceptors/AuthInterceptor.js"></script>
     <script src="/admin/js/controllers/LoginCtrl.js"></script>
+    <script src="/admin/js/controllers/NavCtrl.js"></script>
+    <script src="/admin/js/controllers/HomeCtrl.js"></script>
+    <script src="/admin/js/controllers/ProductCtrl.js"></script>
+    <script src="/admin/js/controllers/OrderCtrl.js"></script>
 </body>
 
 </html>

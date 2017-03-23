@@ -1,67 +1,83 @@
-<div class="container">
-  <div class="col-xs-6 text-right">
-    <a href="/admin/#!/orders" class="btn">Pending Orders</a>
-  </div>
-  <div class="col-xs-6 text-left">
-    <a href="/admin/#!/orders/completed" class="btn">Completed Orders</a>
-  </div>
-</div>
-<div class="row">
-  <div ng-repeat="order in orders | filter: { status: false }" class = "col-sm-6 col-md-4">
-      <div class = "thumbnail">
-        <div>
-          <p>Creada: {{order.createdAt | date:'medium'}}</p>
-          <p>Completada: {{order.modifiedAt | date:'medium'}}</p>
-          <p>Order Id:</p>
-          <p>{{order._id}}</p>
-        </div>
-        <div>
-          <p>Nombre:</p>
-          <p>{{order.name}}</p>
-        </div>
-        <div>
-          <p>Email:</p>
-          <p>{{order.email}}</p>
-        </div>
-        <div>
-          <p>Teléfono:</p>
-          <p>{{order.phone}}</p>
-        </div>
-        <div class = "caption">
-           <table>
-             <thead>
-               <tr>
-                 <th>
-                   Productos
-                 </th>
-                 <th>
-                   Cantidad
-                 </th>
-               </tr>
-             </thead>
-             <tbody>
-                <tr ng-repeat="item in order.products">
-                  <td>
-                    {{item.product.title}}
-                  </td>
-                  <td>
-                    {{item.qtty}}
-                  </td>
-                </li>
-             </tbody>
-           </table>
-           
-           <!-- <p>
-              <a href = "#" ng-click="orderDone($event, order._id)" class = "btn btn-primary" role = "button">
-                 Terminada
-              </a> 
-              
-              <a href = "#" class = "btn btn-default" role = "button">
-                 Button
-              </a>
-           </p> -->
-          
-        </div>
+
+<section class="adminMenu col-xs-2">
+    <div class="introAdmin">
+        <p>
+            Hola {{username}}!
+        </p>
+    </div>
+    <ul class="list-unstyled">
+        <li><a href="/admin/#!/home">Dashboard</a></li>
+        <li><a href="/admin/#!/products">Productos</a></li>
+        <li><a href="/admin/#!/addProducts">Añadir Producto</a></li>
+        <li class="activeBtn"><a href="/admin/#!/orders">Ordenes</a></li>
+    </ul>
+</section>
+<section class="adminContent col-xs-10">
+    <div class="row">
+      <div class="container">
+          <div class="col-xs-6 text-right">
+              <a href="/admin/#!/orders" class="btn">Pending Orders</a>
+          </div>
+          <div class="col-xs-6 text-left">
+              <a href="/admin/#!/orders/completed" class="btn">Completed Orders</a>
+          </div>
       </div>
-   </div>
-</div>
+      <div class="row">
+          <div ng-repeat="order in orders | filter: { status: false }" class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                  <div>
+                      <p>Creada: {{order.createdAt | date:'medium'}}</p>
+                      <p>Completada: {{order.modifiedAt | date:'medium'}}</p>
+                      <p>Order Id:</p>
+                      <p>{{order._id}}</p>
+                  </div>
+                  <div>
+                      <p>Nombre:</p>
+                      <p>{{order.name}}</p>
+                  </div>
+                  <div>
+                      <p>Email:</p>
+                      <p>{{order.email}}</p>
+                  </div>
+                  <div>
+                      <p>Teléfono:</p>
+                      <p>{{order.phone}}</p>
+                  </div>
+                  <div class="caption">
+                      <table>
+                          <thead>
+                              <tr>
+                                  <th>
+                                      Productos
+                                  </th>
+                                  <th>
+                                      Cantidad
+                                  </th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr ng-repeat="item in order.products">
+                                  <td>
+                                      {{item.product.title}}
+                                  </td>
+                                  <td>
+                                      {{item.qtty}}
+                                  </td>
+                                  </li>
+                          </tbody>
+                      </table>
+                      <!-- <p>
+                <a href = "#" ng-click="orderDone($event, order._id)" class = "btn btn-primary" role = "button">
+                   Terminada
+                </a> 
+                
+                <a href = "#" class = "btn btn-default" role = "button">
+                   Button
+                </a>
+             </p> -->
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+</section>
