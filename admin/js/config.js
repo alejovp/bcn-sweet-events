@@ -21,7 +21,7 @@ angular.module('adminApp')
       })
       .when('/addProducts', {
         templateUrl: '/admin/templates/addProduct.html',
-        controller: 'ProductCtrl',
+        controller: 'AddProductCtrl',
         secure: true
       })
       .when('/orders', {

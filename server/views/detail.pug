@@ -19,16 +19,27 @@ block main
       .col-sm-4
         
         .col-xs-9.selector
-          p Selecciona un pack
-          p
-            select.selectpicker
-              option(value="6") 6 cupcakes
-              option(value="12") 12 cupcakes
-              option(value="18") 18 cupcakes
+          if (product.category == 'cupcakes')
+            p Selecciona un pack
+            p
+              select.selectpicker
+                option(value="6") 6 cupcakes
+                option(value="12") 12 cupcakes
+                option(value="18") 18 cupcakes
+          if (product.category == 'cakes')
+            p Selecciona nº de personas
+            p
+              select.selectpicker
+                option(value="12") 12 personas
+                option(value="24") 24 personas
+                option(value="36") 36 personas
+                
         .col-xs-3.price(data-price=`${product.price}`)
           p Total
           p €
-            span 18.00
+            -
+              var initTotal = product.price * 6
+            span= initTotal
 
         a.btn.col-xs-12.addProduct(href="", data-id=`${product.id}`, role='button') Añadir al carrito 
           span.glyphicon.glyphicon-shopping-cart

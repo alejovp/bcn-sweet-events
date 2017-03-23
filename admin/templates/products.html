@@ -21,7 +21,7 @@
                     <h3>{{product.title}}</h3>
                     <p>{{product.description}}</p>
                     <ul>
-                        <li ng-repeat="ingredient in product.ingredients">
+                        <li ng-repeat="ingredient in product.ingredients track by $index">
                             {{ingredient}}
                         </li>
                     </ul>

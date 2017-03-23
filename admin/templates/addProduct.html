@@ -40,28 +40,18 @@
               <label for="">Ingredientes</label>
           </div>
           <div class="form-group ">
-              
-              <div class="checkbox col-sm-6" ng-repeat="ingredient in ingList">
+              <div class="checkbox col-sm-6" ng-repeat="ingredient in ingList track by $index">
                 <label>
-                    <input type="checkbox" ng-model="ingredients" ng-true-value="'ingredient'" ng-false-value="">{{ingredient}}
+                    <input
+                      type="checkbox"
+                      title="{{ ingredient }}"
+                      ng-click="$parent.toggleSelection($event)"
+                    >
+                    <span>{{ingredient}}</span>
                 </label>
               </div>
               <hr>
           </div>
-          <!-- <div class="checkbox">
-              <label>
-                  <input type="checkbox" name="ingredients" value="Base esponjosa de vainilla">Base Vainilla
-              </label>
-          </div>
-          <div class="checkbox">
-              <label>
-                  <input type="checkbox" name="ingredients" value="Suave crema de vainilla">Crema Vainilla
-              </label>
-          </div>
-          <div class="checkbox">
-              <label>
-                  <input type="checkbox" name="ingredients" value="Suave crema de chocolate">Crema Chocolate</label>
-          </div> -->
           <div class="form-group prodPrice">
               <label for="">Precio
                 <input type="number" class="form-control" id="" placeholder="Price" ng-model="price">

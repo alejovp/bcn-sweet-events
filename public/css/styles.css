@@ -68,9 +68,10 @@
 /* line 17, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_product.sass */
 .selector p {
   text-align: center;
+  font-size: 16px;
 }
 
-/* line 20, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_product.sass */
+/* line 21, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_product.sass */
 .price {
   padding: 5px 0px 10px 5px;
   border: 1px solid #ddd;
@@ -79,40 +80,41 @@
   border-bottom-right-radius: 4px;
 }
 
-/* line 26, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_product.sass */
+/* line 27, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_product.sass */
 .price p {
   text-align: center;
+  font-size: 16px;
 }
 
-/* line 30, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_product.sass */
+/* line 31, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_product.sass */
 .itemReviews {
   text-align: center;
 }
 
-/* line 33, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_product.sass */
+/* line 34, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_product.sass */
 .addProduct, .continue {
   color: black;
   background: #f0c14b;
   border-color: #a88734 #9c7e31 #846a29;
 }
 
-/* line 37, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_product.sass */
+/* line 38, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_product.sass */
 .addProduct .glyphicon-plus-sign, .continue .glyphicon-plus-sign {
   transform: scale(0.8);
 }
 
-/* line 39, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_product.sass */
+/* line 40, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_product.sass */
 .addProduct .glyphicon-shopping-cart, .continue .glyphicon-shopping-cart {
   color: black;
 }
 
-/* line 41, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_product.sass */
+/* line 42, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_product.sass */
 .addProduct:hover, .continue:hover {
   background: #C29F31;
   color: white;
 }
 
-/* line 44, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_product.sass */
+/* line 45, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_product.sass */
 .addProduct:hover .glyphicon-shopping-cart, .continue:hover .glyphicon-shopping-cart {
   color: white;
 }
