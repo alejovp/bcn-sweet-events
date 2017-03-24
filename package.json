@@ -7,7 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "prestart": "npm install",
+    "prestart": "npm install && bower install",
     "dev": "nodemon index",
     "postinstall": "./node_modules/bower/bin/bower install",
     "start": "node index"

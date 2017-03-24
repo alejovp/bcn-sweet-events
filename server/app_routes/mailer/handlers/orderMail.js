@@ -1,8 +1,5 @@
 const nodemailer = require('nodemailer')
 
-// const Order = require('../../../models/Order.js')
-// const mongoose = require('mongoose')
-
 module.exports = (req, res) => {
     // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
@@ -15,14 +12,21 @@ module.exports = (req, res) => {
 
   const { order } = req.session
   console.log(order)
-  const { name, email } = order
+  const { name, email, _id } = order
 
   let customerMail = {
     // from: process.env.EMAILER,
     to: `${email}`,
     bcc: 'bcnsweetest@gmail.com',
     subject: `Your order from BCN Sweet Events`,
-    text: `Hello ${name}, this is a Test email order`
+    text: `Hola ${name}, 
+
+      Su orden con número ${_id} ha sido recibida con exito, muchas gracias por elegir a BCN Sweet Events.
+
+    Reciba un gran saludo y buen provecho!!,
+
+
+    BCN Sweet Events.`
   }
 
   // send mail with defined transport object
