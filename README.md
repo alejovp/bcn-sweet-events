@@ -6,9 +6,10 @@
 [![mongoDB](public/img/tech-logos/techmongoDB.png)]()
 [![nodeJS](public/img/tech-logos/nodejs-black.png)]()
 [![expressJS](public/img/tech-logos/express_js.png)]()
+[![pug](public/img/tech-logos/pug.png)]()
 [![html css](public/img/tech-logos/html-css.png)]()
 [![JS](public/img/tech-logos/js.png)]()
-
+[![sass](public/img/tech-logos/sass.png)]()
 
 
 ---
