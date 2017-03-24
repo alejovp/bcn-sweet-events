@@ -1,8 +1,15 @@
 # BCN Sweet Events (e-commerce project)
 
 [![Skylab](public/img/tech-logos/skylab-56.png)](http://www.skylabcoders.com/)
+  
 [![Angular](public/img/tech-logos/angularjs-icon.png)]()
-[![Angular](public/img/tech-logos/techmongoDB.png)]()
+[![mongoDB](public/img/tech-logos/techmongoDB.png)]()
+[![nodeJS](public/img/tech-logos/nodejs-black.png)]()
+[![expressJS](public/img/tech-logos/express_js.png)]()
+[![html css](public/img/tech-logos/html-css.png)]()
+[![JS](public/img/tech-logos/js.png)]()
+
+
 
 ---
 ## Description 
