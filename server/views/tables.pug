@@ -1,0 +1,27 @@
+extends layout
+
+block main
+  
+  section.proArticles
+    h3  Estas son nuestras mesas destacadas
+    p.paraTable Para ver más ejemplos de nuestras mesas puede visitar la galería de Sweet Party Tables. Póngase en contacto con nosotros y arrglaremos una mesa que se ajuste a su fiesta. 
+
+    //- articles to create dinamicly
+    .row
+      each product in products
+        if (product.category === section)
+          .proTable
+            .col-sm-7.imgContainer
+              //- a(href=`/products/details/${product.id}`)
+              img.img-responsive.secImg(src=`${product.imgURL}`, alt='...')
+
+            .col-sm-5
+              h3.itemName= product.title 
+              p= product.description
+              ul
+                each ing in product.ingredients
+                  li.col-sm-6= ing
+            .col-md-5.sectionBtns
+              a.btn(href='/products/contact') Solicitar Información
+            
+            hr

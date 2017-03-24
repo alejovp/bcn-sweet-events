@@ -119,6 +119,18 @@
   color: white;
 }
 
+/* line 48, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_product.sass */
+.proTable {
+  border: 1px solid #BDBBBB;
+  border-radius: 4px;
+  margin: 15px;
+}
+
+/* line 53, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_product.sass */
+.paraTable {
+  margin: 30px;
+}
+
 /* line 4, /Users/zoraidamoreno/Alejandro/SkyLabCoders/projects/bcn-sweet-events/public/sass/partials/_cart.sass */
 table {
   text-align: center;

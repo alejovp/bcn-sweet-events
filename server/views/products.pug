@@ -5,9 +5,11 @@ block main
   section.proArticles
     if (section == 'cupcakes')
       h3  Estos son nuestros Cupcakes
-    //- articles to create dinamicly
+    
     if (section == 'cakes')
       h3  Estas son nuestras Tartas
+
+    //- articles to create dinamicly
     .row
       each product in products
         if (product.category === section)
@@ -37,6 +39,9 @@ block main
                         option(value="6") 6 cupcakes
                         option(value="12") 12 cupcakes
                         option(value="18") 18 cupcakes
+                      -
+                        var initTotal = product.price * 6
+
                   if (section == 'cakes')
                     p Selecciona nº de personas
                     p
@@ -44,11 +49,12 @@ block main
                         option(value="12") 12 personas
                         option(value="24") 24 personas
                         option(value="36") 36 personas
+                      -
+                        var initTotal = product.price * 12
                 .col-xs-3.price(data-price=`${product.price}`)
                   p Total
                   p €
-                    -
-                      var initTotal = product.price * 6
+                    
                     span= initTotal
 
                 a.btn.col-xs-12.addProduct(href="", data-id=`${product.id}`, role='button') Añadir al carrito 

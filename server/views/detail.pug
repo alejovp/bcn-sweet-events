@@ -26,6 +26,9 @@ block main
                 option(value="6") 6 cupcakes
                 option(value="12") 12 cupcakes
                 option(value="18") 18 cupcakes
+              -
+                var initTotal = product.price * 6  
+
           if (product.category == 'cakes')
             p Selecciona nº de personas
             p
@@ -33,12 +36,13 @@ block main
                 option(value="12") 12 personas
                 option(value="24") 24 personas
                 option(value="36") 36 personas
+              -
+                var initTotal = product.price * 12
                 
         .col-xs-3.price(data-price=`${product.price}`)
           p Total
           p €
-            -
-              var initTotal = product.price * 6
+            
             span= initTotal
 
         a.btn.col-xs-12.addProduct(href="", data-id=`${product.id}`, role='button') Añadir al carrito 

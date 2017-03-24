@@ -4,13 +4,16 @@
 
   function AddProductCtrl ($scope, DataFactory, $location, Upload) {
     const ingCupcakes = ['Base Vainilla', 'Base Chocolate', 'Base Zanahoria', 'Base Red Velvet', 'Crema Vainilla', 'Crema Chocolate', 'Crema de Yogurt', 'Crema de Oreo', 'Crema de Nutella', 'Crema de Mascarpone']
-    const ingCakes = ['Bizcocho de Vainilla', 'Bizcocho de Chocolate', 'Bizcocho de Zanahoria', 'Bizcocho de Plátano', 'Bizcocho de Limón', 'Bizcocho de Naranja', 'Relleno de Nutella', 'Relleno de Vainilla', 'Relleno de Mascarpone', 'Relleno dulce de leche', 'cubierta de Crema...', 'Cubierta de Fondant']
+    const ingCakes = ['Bizcocho de Vainilla', 'Bizcocho de Chocolate', 'Bizcocho de Zanahoria', 'Bizcocho de Plátano', 'Bizcocho de Limón', 'Bizcocho de Naranja', 'Relleno de Nutella', 'Relleno de Vainilla', 'Relleno de Mascarpone', 'Relleno dulce de leche', 'Relleno de Chocolate', 'cubierta de Crema...', 'Cubierta de Fondant']
+    const ingTables = ['Cupcakes', 'Tarta', 'Cakepops', 'Brownies', 'Galletas', 'Chuches', 'Trufas de Chocolate', 'Shots de postres']
 
     $scope.showIngredients = () => {
       if ($scope.category === 'cupcakes') {
         $scope.ingList = ingCupcakes
       } else if ($scope.category === 'cakes') {
         $scope.ingList = ingCakes
+      } else if ($scope.category === 'tables') {
+        $scope.ingList = ingTables
       }
     }
 
