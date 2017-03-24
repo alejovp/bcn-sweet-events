@@ -1,6 +1,8 @@
 # BCN Sweet Events (e-commerce project)
 
 [![Skylab](public/img/tech-logos/skylab-56.png)](http://www.skylabcoders.com/)
+[![Angular](public/img/tech-logos/angularjs-icon.png)]()
+[![Angular](public/img/tech-logos/techmongoDB.png)]()
 
 ---
 ## Description 
@@ -84,13 +86,14 @@ On the other hand, if you want to run this app remotely (in heroku) the proper e
     heroku config:set API_SECRET=XXXXXXXXXXXXXXXXXX
     heroku config:set UPLOAD_FOLDER=upload
 
+---
 ## Coding Style
 
 All the code has been developed under the [JavaScript Standard Style](http://standardjs.com/)
 
 ## Built With
 
-* [SublimeText](http://https://https:/npmdejs.org/www.sublimetext.com) - Text editohttps://www.mongodb.com/r
+* [SublimeText](http://https://https:/npmdejs.org/www.sublimetext.com) - Text editor
 
 ## Authors
 
