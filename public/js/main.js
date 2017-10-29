@@ -41,7 +41,7 @@
   }
 
   window.onscroll = function () {
-    if (document.body.scrollTop >= 130) {
+    if (document.body.scrollTop >= 130 || document.documentElement.scrollTop >= 130) {
       navToColor.classList.add('nav-colored')
       navLogo.classList.add('nav-colored')
     } else {
